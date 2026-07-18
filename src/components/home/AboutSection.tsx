@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 
 const stats = [
-  { value: "20+", label: "års erfaring med IT-support" },
+  { value: "20+", label: "års erfaring med IT-hjælp" },
   { value: "1.000+", label: "tilfredse kunder" },
   { value: "2.000+", label: "løste opgaver" },
 ];

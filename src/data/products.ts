@@ -11,9 +11,9 @@ export const products: Product[] = [
     id: "1",
     slug: "apple-macbook-pakke",
     name: "Apple-MacBook Pakke",
-    shortDescription: "MacBook Air 13 M4 – klar til brug med personlig support.",
+    shortDescription: "MacBook Air 13 M4 – klar til brug med personlig hjælp.",
     description:
-      "Den perfekte løsning til de fleste. Hurtig, driftssikker og skræddersyet til dine behov – med fuld opsætning, dataoverførsel og personlig support.",
+      "Den perfekte løsning til de fleste. Hurtig, driftssikker og skræddersyet til dine behov – med fuld opsætning, dataoverførsel og personlig hjælp.",
     price: 13995,
     category: "pakker",
     featured: true,
@@ -73,7 +73,7 @@ export const products: Product[] = [
     name: "Premiumpakke",
     shortDescription: "Lenovo Yoga Slim 7 OLED – premium oplevelse til krævende brug.",
     description:
-      "Premium computer til dig der vil have det bedste. Fuldt opsat med dataoverførsel og 12 måneders support.",
+      "Premium computer til dig der vil have det bedste. Fuldt opsat med dataoverførsel og 12 måneders tryghed.",
     price: 15995,
     category: "pakker",
     featured: true,
@@ -92,7 +92,7 @@ export const products: Product[] = [
     name: "🌟 Tryghedspakke – Klar til brug",
     shortDescription: "Komplet pakke med computer, opsætning og tryghedsaftale.",
     description:
-      "Alt-i-én løsning med computer, fuld opsætning, dataoverførsel og 12 måneders personlig support.",
+      "Alt-i-én løsning med computer, fuld opsætning, dataoverførsel og 12 måneders personlig tryghed.",
     price: 14000,
     salePrice: 11995,
     category: "pakker",
@@ -101,7 +101,7 @@ export const products: Product[] = [
     specs: [
       "Skræddersyet computer efter behov",
       "Fuld opsætning og hjemmeinstallation",
-      "12 måneders fjernstyringssupport",
+      "12 måneders fjernstyring og hjælp",
     ],
     included: defaultIncluded,
     supportMonths: 12,
@@ -113,7 +113,7 @@ export const products: Product[] = [
     name: "Gamerpakke",
     shortDescription: "Kraftfuld gaming-computer – klar til spil fra dag ét.",
     description:
-      "Designet til gamere der vil have performance uden besvær. Opsat, testet og klar med support inkluderet.",
+      "Designet til gamere der vil have performance uden besvær. Opsat, testet og klar med tryghed inkluderet.",
     price: 16995,
     category: "pakker",
     specs: [
@@ -145,17 +145,17 @@ export const products: Product[] = [
     id: "8",
     slug: "tryghedsaftale-12mdr",
     name: "12 mdr. Tryghedsaftale (uden computer)",
-    shortDescription: "Forlænget personlig IT-support uden computerkøb.",
+    shortDescription: "Forlænget personlig IT-hjælp uden computerkøb.",
     description:
-      "12 måneders adgang til teknisk rådgivning, fjernsupport og assistance ved almindelige IT-problemer.",
+      "12 måneders adgang til teknisk rådgivning, fjernhjælp og assistance ved almindelige IT-problemer.",
     price: 4995,
     category: "ydelser",
     specs: [
       "Teknisk rådgivning",
-      "Fjernsupport",
+      "Fjernhjælp",
       "Assistance ved almindelige IT-problemer",
     ],
-    included: ["Personlig kontaktperson", "Support efter aftale inden for arbejdstid"],
+    included: ["Personlig kontaktperson", "Hjælp efter aftale inden for arbejdstid"],
     supportMonths: 12,
     image: "/products/tryghedsaftale.png",
   },

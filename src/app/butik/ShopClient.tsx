@@ -49,7 +49,7 @@ export default function ShopClient() {
         <h1 className="text-3xl font-bold text-navy">Butik</h1>
         <p className="mt-2 text-muted">
           Opsætning, hjemmeinstallation og dataoverførsel er altid inkluderet. 6
-          eller 12 måneders fast support medfølger.
+          eller 12 måneders fast tryghed medfølger.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4">

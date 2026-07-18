@@ -22,7 +22,7 @@ export function ProductGrid({ products }: ProductGridProps) {
             align="left"
             eyebrow="Computerpakker"
             title="Vores populære pakker"
-            description="Opsætning, hjemmeinstallation og dataoverførsel er altid inkluderet. 6 eller 12 måneders fast support medfølger."
+            description="Opsætning, hjemmeinstallation og dataoverførsel er altid inkluderet. 6 eller 12 måneders fast tryghed medfølger."
           />
           <Button href="/butik" variant="outline" className="shrink-0 self-start lg:self-auto">
             Se alle pakker

@@ -17,7 +17,7 @@ const steps = [
     step: "2",
     title: "Valg af pakke",
     description:
-      "Du vælger den computerpakke der passer til dig. Alle priser inkluderer opsætning og support.",
+      "Du vælger den computerpakke der passer til dig. Alle priser inkluderer opsætning og tryghed.",
   },
   {
     step: "3",
@@ -33,9 +33,9 @@ const steps = [
   },
   {
     step: "5",
-    title: "Support inkluderet",
+    title: "Tryghed inkluderet",
     description:
-      "6 eller 12 måneders personlig IT-support følger med. Du har altid en kontaktperson at ringe til.",
+      "6 eller 12 måneders personlig IT-hjælp følger med. Du har altid en kontaktperson at ringe til.",
   },
 ];
 

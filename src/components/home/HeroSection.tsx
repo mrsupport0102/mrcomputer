@@ -11,7 +11,7 @@ const heroPoints = [
 const packageIncludes = [
   "Hjemmeinstallation",
   "Dataoverførsel",
-  "Personlig IT-support",
+  "Personlig IT-hjælp",
 ];
 
 export function HeroSection() {
@@ -27,7 +27,7 @@ export function HeroSection() {
                 <div className="hidden items-center gap-2 rounded-full border border-green/20 bg-green/5 px-3 py-1.5 sm:inline-flex">
                   <span className="h-1.5 w-1.5 rounded-full bg-green" />
                   <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy/70">
-                    Opsætning · Dataoverførsel · Personlig support
+                    Opsætning · Dataoverførsel · Personlig hjælp
                   </span>
                 </div>
 
@@ -35,7 +35,7 @@ export function HeroSection() {
                   Ny computer.
                   <span className="block text-navy/90">Klar til brug.</span>
                   <span className="mt-0.5 block bg-gradient-to-r from-green to-emerald-600 bg-clip-text text-transparent sm:mt-1">
-                    Support inkluderet.
+                    Tryghed inkluderet.
                   </span>
                 </h1>
               </div>
@@ -54,7 +54,7 @@ export function HeroSection() {
 
             <p className="mt-3 max-w-md text-sm leading-relaxed text-muted sm:mt-5 sm:text-base md:text-lg">
               Vi leverer skræddersyede computerpakker med opsætning,
-              dataoverførsel og dansk IT-support — så du er klar fra første
+              dataoverførsel og dansk IT-hjælp — så du er klar fra første
               sekund.
             </p>
 
@@ -72,7 +72,7 @@ export function HeroSection() {
                 Inkluderet i alle pakker
               </p>
               <p className="mt-1 text-base font-bold text-navy md:text-lg">
-                6 eller 12 måneders support
+                6 eller 12 måneders tryghed
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {packageIncludes.map((item) => (

@@ -3,15 +3,15 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Tryghedsaftale",
-  description: "6 eller 12 måneders personlig IT-support inkluderet i alle computerpakker.",
+  description: "6 eller 12 måneders personlig IT-hjælp inkluderet i alle computerpakker.",
 };
 
 const included = [
   "Teknisk rådgivning",
-  "Fjernsupport",
+  "Fjernhjælp",
   "Assistance ved almindelige IT-problemer",
   "Personlig kontaktperson",
-  "Support efter aftale inden for arbejdstid",
+  "Hjælp efter aftale inden for arbejdstid",
 ];
 
 const notIncluded = [
@@ -28,7 +28,7 @@ export default function TryghedsaftalePage() {
       <div className="mx-auto max-w-3xl px-4 lg:px-6">
         <h1 className="text-3xl font-bold text-navy">Tryghedsaftale</h1>
         <p className="mt-4 text-muted">
-          Alle vores computerpakker inkluderer 6 eller 12 måneders personlig IT-support
+          Alle vores computerpakker inkluderer 6 eller 12 måneders personlig IT-hjælp
           leveret af MR Support. Det er ikke et abonnement – det fornyes ikke automatisk.
         </p>
 
@@ -45,7 +45,7 @@ export default function TryghedsaftalePage() {
         </div>
 
         <div className="mt-8 rounded-2xl border border-gray-200 p-6">
-          <h2 className="text-lg font-bold text-navy">Hvad dækker supporten ikke?</h2>
+          <h2 className="text-lg font-bold text-navy">Hvad dækker tryghedsaftalen ikke?</h2>
           <ul className="mt-4 space-y-2">
             {notIncluded.map((item) => (
               <li key={item} className="flex items-start gap-2 text-sm text-muted">

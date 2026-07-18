@@ -15,11 +15,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "MR Computer – Ny computer. Klar til brug. Support inkluderet.",
+    default: "MR Computer – Ny computer. Klar til brug. Tryghed inkluderet.",
     template: "%s | MR Computer",
   },
   description:
-    "Computerpakker med opsætning, dataoverførsel og personlig IT-support inkluderet. Levering i hele Danmark.",
+    "Computerpakker med opsætning, dataoverførsel og personlig IT-hjælp inkluderet. Levering i hele Danmark.",
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "da_DK",
     siteName: "MR Computer",
-    title: "MR Computer – Ny computer. Klar til brug. Support inkluderet.",
+    title: "MR Computer – Ny computer. Klar til brug. Tryghed inkluderet.",
     description:
-      "Computerpakker med opsætning, dataoverførsel og personlig IT-support inkluderet.",
+      "Computerpakker med opsætning, dataoverførsel og personlig IT-hjælp inkluderet.",
   },
 };
 

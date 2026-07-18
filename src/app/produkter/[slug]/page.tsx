@@ -69,7 +69,7 @@ export default async function ProductPage({ params }: Props) {
 
             {product.supportMonths > 0 && (
               <p className="mt-4 rounded-lg bg-green/10 px-4 py-3 text-sm font-medium text-navy">
-                {product.supportMonths} måneders inkluderet support &amp; fjernstyring
+                {product.supportMonths} måneders inkluderet tryghed &amp; fjernstyring
               </p>
             )}
 

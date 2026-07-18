@@ -25,7 +25,7 @@ export default function LegalPage() {
             <p>E-mail: info@mrcomputer.dk · Telefon: 31 36 45 24</p>
             <p>Alle priser er angivet i danske kroner (DKK) inkl. moms.</p>
             <p>Typisk leveringstid er 7–14 hverdage. Computere klargøres før levering.</p>
-            <p>Ved køb af computer kan der være inkluderet 6 eller 12 måneders supportaftale.</p>
+            <p>Ved køb af computer kan der være inkluderet 6 eller 12 måneders tryghedsaftale.</p>
             <p>24 måneders reklamationsret på hardware i henhold til dansk lovgivning.</p>
             <p>14 dages fortrydelsesret ved køb online.</p>
           </div>

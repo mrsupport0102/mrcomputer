@@ -54,7 +54,7 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
       <div className={cn("flex flex-1 flex-col p-6 md:p-7", featured && "lg:justify-center")}>
         {product.supportMonths > 0 && (
           <p className="text-xs font-semibold uppercase tracking-wider text-green">
-            {product.supportMonths} mdr. support inkl.
+            {product.supportMonths} mdr. tryghed inkl.
           </p>
         )}
 
