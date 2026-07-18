@@ -6,10 +6,12 @@ import { BenefitsSection } from "@/components/home/BenefitsSection";
 import { AboutSection } from "@/components/home/AboutSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CallToAction } from "@/components/home/CallToAction";
-import { getFeaturedProducts } from "@/data/products";
+import { getFeaturedProducts } from "@/lib/products-store";
 
-export default function HomePage() {
-  const featured = getFeaturedProducts();
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const featured = await getFeaturedProducts();
 
   return (
     <>

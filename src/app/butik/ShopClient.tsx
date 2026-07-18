@@ -1,9 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { products } from "@/data/products";
 import { ProductCard } from "@/components/shop/ProductCard";
-import { ProductCategory } from "@/lib/types";
+import { Product, ProductCategory } from "@/lib/types";
 
 const categories: { value: ProductCategory | "all"; label: string }[] = [
   { value: "all", label: "Alle" },
@@ -14,7 +13,11 @@ const categories: { value: ProductCategory | "all"; label: string }[] = [
 
 type SortOption = "default" | "price-asc" | "price-desc" | "name";
 
-export default function ShopClient() {
+interface ShopClientProps {
+  products: Product[];
+}
+
+export default function ShopClient({ products }: ShopClientProps) {
   const [category, setCategory] = useState<ProductCategory | "all">("all");
   const [sort, setSort] = useState<SortOption>("default");
 
@@ -22,7 +25,7 @@ export default function ShopClient() {
     const result =
       category === "all"
         ? [...products]
-        : products.filter((p) => p.category === category);
+        : products.filter((product) => product.category === category);
 
     switch (sort) {
       case "price-asc":
@@ -41,7 +44,7 @@ export default function ShopClient() {
     }
 
     return result;
-  }, [category, sort]);
+  }, [category, products, sort]);
 
   return (
     <div className="py-12">
@@ -72,7 +75,7 @@ export default function ShopClient() {
 
           <select
             value={sort}
-            onChange={(e) => setSort(e.target.value as SortOption)}
+            onChange={(event) => setSort(event.target.value as SortOption)}
             className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm"
             aria-label="Sortér produkter"
           >

@@ -18,7 +18,7 @@ export async function POST(request: Request) {
 
   try {
     const body = (await request.json()) as { items?: CheckoutLineItem[] };
-    const lines = validateCheckoutItems(body.items ?? []);
+    const lines = await validateCheckoutItems(body.items ?? []);
     const amount = getCheckoutTotalOre(lines);
     const siteUrl = getSiteUrl();
     const orderId = createOrderId();

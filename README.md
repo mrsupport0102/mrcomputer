@@ -7,9 +7,10 @@ Modern Next.js webshop for [MR Computer](https://www.mrcomputer.dk) — bygget f
 - **Next.js 16** (App Router)
 - **TypeScript**
 - **Tailwind CSS v4**
-- Lokale produktdata i `src/data/products.ts`
-- Kurv via localStorage (klar til checkout senere)
+- Lokale produktdata med admin-styring (`data/products.json` / Netlify Blobs)
+- Kurv via localStorage + QuickPay checkout
 - Produktfeed-API på `/api/products`
+- Admin-panel på `/admin` til oprettelse og redigering af pakker
 
 ## Kom i gang
 
@@ -57,11 +58,20 @@ src/
 2. Opret nyt site på [Netlify](https://app.netlify.com)
 3. Forbind GitHub-repo
 4. Netlify læser `netlify.toml` automatisk
-5. Sæt miljøvariabel: `NEXT_PUBLIC_SITE_URL=https://dit-domæne.dk`
+5. Sæt miljøvariabler i Netlify:
+   - `NEXT_PUBLIC_SITE_URL=https://mrcomputer.dk`
+   - `QUICKPAY_API_KEY` og `QUICKPAY_PRIVATE_KEY`
+   - `ADMIN_PASSWORD` og `ADMIN_SESSION_SECRET`
+
+## Admin
+
+- Login: `/admin/login` (link findes diskret i footeren)
+- Opret og rediger pakker, priser, billeder og forsidespot
+- Produkter gemmes lokalt i `data/products.json` og i Netlify Blobs på production
 
 ## Fremtidige udvidelser
 
-- Checkout (QuickPay)
+- Billedupload direkte i admin
 - Produktfeed fra ekstern kilde
 - CMS til indhold
 - Trustpilot API-integration

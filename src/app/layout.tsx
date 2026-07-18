@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
+import { ConditionalShell } from "@/components/layout/ConditionalShell";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,9 +42,7 @@ export default function RootLayout({
     <html lang="da" className={`${inter.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <CartProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <ConditionalShell>{children}</ConditionalShell>
         </CartProvider>
       </body>
     </html>

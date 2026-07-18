@@ -58,7 +58,12 @@ export function Footer() {
       </div>
 
       <div className="border-t border-white/10 py-4 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} MR Computer / MR Support · CVR 40198237
+        <p>
+          © {new Date().getFullYear()} MR Computer / MR Support · CVR 40198237
+        </p>
+        <Link href="/admin/login" className="mt-2 inline-block text-white/35 hover:text-white/60">
+          Admin
+        </Link>
       </div>
     </footer>
   );

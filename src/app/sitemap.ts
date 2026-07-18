@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
-import { products } from "@/data/products";
+import { getAllProducts } from "@/lib/products-store";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const products = await getAllProducts();
   const staticPages = [
     "",
     "/butik",

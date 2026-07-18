@@ -1,5 +1,5 @@
 import { randomUUID } from "crypto";
-import { products } from "@/data/products";
+import { getProductById } from "@/lib/products-store";
 import { Product } from "@/lib/types";
 
 export interface CheckoutLineItem {
@@ -13,7 +13,7 @@ export interface ValidatedCartLine {
   unitPrice: number;
 }
 
-export function validateCheckoutItems(items: CheckoutLineItem[]): ValidatedCartLine[] {
+export async function validateCheckoutItems(items: CheckoutLineItem[]): Promise<ValidatedCartLine[]> {
   if (!items.length) {
     throw new Error("Kurven er tom");
   }
@@ -25,7 +25,7 @@ export function validateCheckoutItems(items: CheckoutLineItem[]): ValidatedCartL
       throw new Error("Ugyldigt produkt eller antal i kurven");
     }
 
-    const product = products.find((entry) => entry.id === item.productId);
+    const product = await getProductById(item.productId);
     if (!product) {
       throw new Error("Et produkt i kurven findes ikke længere");
     }
