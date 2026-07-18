@@ -1,0 +1,53 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
+import { CartProvider } from "@/context/CartContext";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "MR Computer – Ny computer. Klar til brug. Support inkluderet.",
+    template: "%s | MR Computer",
+  },
+  description:
+    "Computerpakker med opsætning, dataoverførsel og personlig IT-support inkluderet. Levering i hele Danmark.",
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "da_DK",
+    siteName: "MR Computer",
+    title: "MR Computer – Ny computer. Klar til brug. Support inkluderet.",
+    description:
+      "Computerpakker med opsætning, dataoverførsel og personlig IT-support inkluderet.",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="da" className={`${inter.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col">
+        <CartProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </CartProvider>
+      </body>
+    </html>
+  );
+}

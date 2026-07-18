@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#f3f4f6"/>
+  <rect x="100" y="40" width="200" height="140" rx="12" fill="#0b1120"/>
+  <circle cx="200" cy="200" r="40" fill="#54c15a" opacity="0.3"/>
+  <text x="200" y="205" text-anchor="middle" fill="#0b1120" font-size="14" font-family="sans-serif">MacBook</text>
+</svg>
