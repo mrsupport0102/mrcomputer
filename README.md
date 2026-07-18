@@ -61,7 +61,7 @@ src/
 
 ## Fremtidige udvidelser
 
-- Checkout (Stripe / QuickPay)
+- Checkout (QuickPay)
 - Produktfeed fra ekstern kilde
 - CMS til indhold
 - Trustpilot API-integration

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tryghedsaftale",
     "/kontakt",
     "/kurv",
+    "/kurv/tak",
     "/handelsbetingelser",
   ];
 
