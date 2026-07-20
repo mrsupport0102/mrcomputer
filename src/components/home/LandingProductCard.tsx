@@ -20,16 +20,16 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
   return (
     <article
       className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-3xl border bg-white transition-all duration-300",
+        "group relative flex h-full flex-col rounded-3xl border bg-white transition-all duration-300",
         featured
-          ? "border-green/30 shadow-lg shadow-green/5 ring-1 ring-green/10 lg:flex-row"
+          ? "overflow-hidden border-green/30 shadow-lg shadow-green/5 ring-1 ring-green/10 lg:flex-row"
           : "border-gray-200/80 shadow-sm hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg"
       )}
     >
       <Link
         href={`/produkter/${product.slug}`}
         className={cn(
-          "relative bg-gradient-to-b from-gray-50 to-white",
+          "relative overflow-hidden bg-gradient-to-b from-gray-50 to-white",
           featured ? "lg:w-[42%]" : "aspect-[4/3]"
         )}
       >
@@ -84,25 +84,38 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
           ))}
         </ul>
 
-        <div className="mt-6 flex items-end justify-between gap-4 border-t border-gray-100 pt-5">
+        <div
+          className={cn(
+            "mt-6 border-t border-gray-100 pt-5",
+            featured
+              ? "flex items-end justify-between gap-4"
+              : "flex flex-col gap-3"
+          )}
+        >
           <PriceDisplay
             price={product.price}
             salePrice={product.salePrice}
             size={featured ? "lg" : "md"}
           />
-          <div className="flex gap-2">
+          <div className={cn("flex gap-2", !featured && "w-full")}>
             <Link
               href={`/produkter/${product.slug}`}
-              className="hidden rounded-full px-4 py-2.5 text-sm font-semibold text-navy transition hover:bg-gray-100 sm:inline-flex"
+              className={cn(
+                "inline-flex items-center justify-center rounded-full border border-gray-200 bg-white text-sm font-semibold text-navy transition hover:bg-gray-50",
+                featured ? "hidden px-4 py-2.5 sm:inline-flex" : "flex-1 px-3 py-2.5"
+              )}
             >
               Læs mere
             </Link>
             <ButtonNative
               variant="primary"
-              className="px-5 py-2.5 text-sm"
+              className={cn(
+                "whitespace-nowrap text-sm",
+                featured ? "px-5 py-2.5" : "flex-1 px-3 py-2.5"
+              )}
               onClick={() => addItem(product)}
             >
-              Tilføj
+              Tilføj til kurv
             </ButtonNative>
           </div>
         </div>
