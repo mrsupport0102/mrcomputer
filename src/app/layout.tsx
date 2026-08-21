@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { ConditionalShell } from "@/components/layout/ConditionalShell";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
 
@@ -39,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="da" className={`${inter.variable} h-full antialiased`}>
+    <html lang="da" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
         <CartProvider>
           <ConditionalShell>{children}</ConditionalShell>
