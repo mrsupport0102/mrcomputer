@@ -8,6 +8,7 @@ import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { ButtonNative } from "@/components/ui/Button";
 import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
+import { getProductVariants, getStartingPrice } from "@/lib/product-variants";
 
 interface LandingProductCardProps {
   product: Product;
@@ -16,6 +17,7 @@ interface LandingProductCardProps {
 
 export function LandingProductCard({ product, featured }: LandingProductCardProps) {
   const { addItem } = useCart();
+  const variants = getProductVariants(product);
 
   return (
     <article
@@ -93,9 +95,9 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
           )}
         >
           <PriceDisplay
-            price={product.price}
-            salePrice={product.salePrice}
+            price={getStartingPrice(product)}
             size={featured ? "lg" : "md"}
+            className={variants.length ? "before:mr-1 before:content-['Fra']" : undefined}
           />
           <div className={cn("flex gap-2", !featured && "w-full")}>
             <Link
@@ -107,7 +109,10 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
             >
               Læs mere
             </Link>
-            <ButtonNative
+            {variants.length ? <Link
+              href={`/produkter/${product.slug}`}
+              className={cn("inline-flex items-center justify-center rounded-full bg-green font-semibold text-white transition hover:bg-green-hover", featured ? "px-5 py-2.5" : "flex-1 px-3 py-2.5")}
+            >Vælg computer</Link> : <ButtonNative
               variant="primary"
               className={cn(
                 "whitespace-nowrap text-sm",
@@ -116,7 +121,7 @@ export function LandingProductCard({ product, featured }: LandingProductCardProp
               onClick={() => addItem(product)}
             >
               Tilføj til kurv
-            </ButtonNative>
+            </ButtonNative>}
           </div>
         </div>
       </div>

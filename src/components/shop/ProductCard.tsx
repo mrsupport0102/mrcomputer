@@ -2,12 +2,15 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 import { Product } from "@/lib/types";
 import { Badge } from "@/components/ui/Badge";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { ButtonNative } from "@/components/ui/Button";
 import { useCart } from "@/context/CartContext";
 import { CheckCircleIcon } from "@/components/home/icons";
+import { formatPrice } from "@/lib/format-price";
+import { getProductVariants, getStartingPrice, getVariantPackagePrice, productWithVariant } from "@/lib/product-variants";
 
 interface ProductCardProps {
   product: Product;
@@ -15,6 +18,10 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
+  const variants = getProductVariants(product);
+  const [variantId, setVariantId] = useState(variants[0]?.id ?? "");
+  const selectedVariant = variants.find((variant) => variant.id === variantId) ?? variants[0];
+  const selectedPrice = selectedVariant ? getVariantPackagePrice(selectedVariant) : product.salePrice ?? product.price;
 
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl sm:rounded-3xl">
@@ -56,11 +63,29 @@ export function ProductCard({ product }: ProductCardProps) {
           <p className="text-[10px] font-semibold leading-tight text-green sm:text-xs">
             Køb inden kl. 16 — bliv ringet op i dag
           </p>
-          <PriceDisplay price={product.price} salePrice={product.salePrice} />
+          {variants.length > 0 ? (
+            <>
+              <label className="sr-only" htmlFor={`variant-${product.id}`}>Vælg computer</label>
+              <select
+                id={`variant-${product.id}`}
+                value={variantId}
+                onChange={(event) => setVariantId(event.target.value)}
+                className="w-full rounded-xl border border-slate-200 bg-white px-2 py-2 text-[10px] font-semibold text-navy outline-none transition focus:border-green sm:px-3 sm:text-xs"
+              >
+                {variants.map((variant) => (
+                  <option key={variant.id} value={variant.id}>{variant.name} · {formatPrice(getVariantPackagePrice(variant))}</option>
+                ))}
+              </select>
+              <div>
+                <p className="text-[9px] uppercase tracking-wider text-slate-400 sm:text-[10px]">Fra {formatPrice(getStartingPrice(product))}</p>
+                <p className="text-base font-bold text-navy sm:text-lg">Valgt: {formatPrice(selectedPrice)}</p>
+              </div>
+            </>
+          ) : <PriceDisplay price={product.price} salePrice={product.salePrice} />}
           <ButtonNative
             variant="primary"
             className="w-full px-2 py-2 text-xs sm:px-4 sm:py-2.5 sm:text-sm"
-            onClick={() => addItem(product)}
+            onClick={() => addItem(selectedVariant ? productWithVariant(product, selectedVariant) : product)}
           >
             Tilføj til kurv
           </ButtonNative>

@@ -6,6 +6,7 @@ import { getAllProducts, getProductBySlug } from "@/lib/products-store";
 import { Badge } from "@/components/ui/Badge";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { AddToCartSection } from "./AddToCartSection";
+import { getProductVariants, getStartingPrice } from "@/lib/product-variants";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -32,6 +33,7 @@ export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) notFound();
+  const variants = getProductVariants(product);
 
   return (
     <div className="bg-[#f6f8f7] py-10 md:py-14">
@@ -67,7 +69,7 @@ export default async function ProductPage({ params }: Props) {
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-green">{product.category === "pakker" ? "Komplet computerpakke" : "Personlig løsning"}</p>
             <h1 className="mt-3 text-3xl font-bold tracking-tight text-navy md:text-4xl">{product.name}</h1>
             <div className="mt-4">
-              <PriceDisplay price={product.price} salePrice={product.salePrice} size="lg" />
+              <div className="flex items-baseline gap-2"><span className="text-sm font-semibold text-green">{variants.length ? "Fra" : ""}</span><PriceDisplay price={getStartingPrice(product)} size="lg" /></div>
             </div>
             <p className="mt-6 leading-relaxed text-muted">{product.description}</p>
 

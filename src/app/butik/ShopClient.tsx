@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { ProductCard } from "@/components/shop/ProductCard";
 import { Product, ProductCategory } from "@/lib/types";
+import { getStartingPrice } from "@/lib/product-variants";
 
 const categories: { value: ProductCategory | "all"; label: string }[] = [
   { value: "all", label: "Alle" },
@@ -39,12 +40,12 @@ export default function ShopClient({ products }: ShopClientProps) {
         break;
       case "price-asc":
         result.sort(
-          (a, b) => (a.salePrice ?? a.price) - (b.salePrice ?? b.price)
+          (a, b) => getStartingPrice(a) - getStartingPrice(b)
         );
         break;
       case "price-desc":
         result.sort(
-          (a, b) => (b.salePrice ?? b.price) - (a.salePrice ?? a.price)
+          (a, b) => getStartingPrice(b) - getStartingPrice(a)
         );
         break;
       case "name":

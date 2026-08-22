@@ -7,6 +7,7 @@ import { formatPrice } from "@/lib/format-price";
 import { useCart } from "@/context/CartContext";
 import { cn } from "@/lib/utils";
 import { CheckCircleIcon } from "./icons";
+import { getProductVariants, getStartingPrice } from "@/lib/product-variants";
 
 interface ProductGridProps { products: Product[] }
 
@@ -34,7 +35,8 @@ function PackageCard({ product }: { product: Product }) {
   const { addItem } = useCart();
   const position = packagePositioning[product.slug] ?? { audience: product.shortDescription, label: "Komplet løsning" };
   const isFeatured = product.slug === "tryghedspakke";
-  const price = product.salePrice ?? product.price;
+  const variants = getProductVariants(product);
+  const price = getStartingPrice(product);
 
   return (
     <article className={cn("group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] border bg-white transition duration-300 hover:-translate-y-1 hover:shadow-xl", isFeatured ? "border-green shadow-xl shadow-green/10 ring-1 ring-green/20" : "border-slate-200 shadow-sm")}>
@@ -57,11 +59,11 @@ function PackageCard({ product }: { product: Product }) {
           <p className="mb-2 text-[10px] font-semibold leading-tight text-green sm:mb-3 sm:text-xs">
             Køb inden kl. 16 — bliv ringet op i dag
           </p>
-          <p className="hidden text-xs text-slate-400 sm:block">Komplet pakkepris</p>
-          <div className="flex flex-col sm:mt-1 sm:flex-row sm:items-baseline sm:gap-2"><span className="text-base font-bold tracking-tight text-navy sm:text-2xl">{formatPrice(price)}</span>{product.salePrice && <span className="hidden text-sm text-slate-400 line-through sm:inline">{formatPrice(product.price)}</span>}</div>
+          <p className="hidden text-xs text-slate-400 sm:block">Komplet pakkepris fra</p>
+          <div className="flex flex-col sm:mt-1 sm:flex-row sm:items-baseline sm:gap-2"><span className="text-base font-bold tracking-tight text-navy sm:text-2xl">Fra {formatPrice(price)}</span></div>
           <div className="mt-2 sm:mt-4 sm:grid sm:grid-cols-2 sm:gap-2">
             <Link href={`/produkter/${product.slug}`} className="hidden min-h-11 items-center justify-center rounded-full border border-slate-200 px-4 py-2.5 text-sm font-semibold text-navy transition hover:border-navy hover:bg-slate-50 sm:inline-flex">Se pakken</Link>
-            <button type="button" onClick={() => addItem(product)} className="min-h-9 w-full rounded-full bg-green px-2 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-green-hover sm:min-h-11 sm:px-4 sm:py-2.5 sm:text-sm">Læg i kurv</button>
+            {variants.length ? <Link href={`/produkter/${product.slug}`} className="inline-flex min-h-9 w-full items-center justify-center rounded-full bg-green px-2 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-green-hover sm:min-h-11 sm:px-4 sm:py-2.5 sm:text-sm">Vælg computer</Link> : <button type="button" onClick={() => addItem(product)} className="min-h-9 w-full rounded-full bg-green px-2 py-2 text-xs font-semibold text-white shadow-sm transition hover:bg-green-hover sm:min-h-11 sm:px-4 sm:py-2.5 sm:text-sm">Læg i kurv</button>}
           </div>
         </div>
       </div>
