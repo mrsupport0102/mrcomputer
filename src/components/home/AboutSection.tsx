@@ -2,7 +2,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { Button } from "@/components/ui/Button";
 
 const stats = [
-  { value: "20+", label: "års erfaring med IT-hjælp" },
+  { value: "20+", label: "års erfaring med personlig tryghed" },
   { value: "1.000+", label: "tilfredse kunder" },
   { value: "2.000+", label: "løste opgaver" },
 ];
@@ -20,7 +20,7 @@ export function AboutSection() {
               description="Vi startede med én klar ambition: at gøre det trygt og enkelt at få en computer, der virker. Med mere end 20 års erfaring hjælper vi dagligt ældre, private, virksomheder og gamere."
             />
             <p className="mt-6 text-base leading-relaxed text-muted">
-              Vores fundament udspringer af MR Support, hvor vi hver dag møder
+              Vores fundament er mange års praktisk erfaring, hvor vi hver dag møder
               mennesker med vidt forskellige behov. Derfor tilbyder vi
               skræddersyede pakker med opsætning, dataoverførsel og personlig
               tilpasning.

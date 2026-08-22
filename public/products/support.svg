@@ -3,5 +3,5 @@
   <circle cx="200" cy="120" r="50" fill="#54c15a" opacity="0.3"/>
   <path d="M200 90v60M170 120h60" stroke="#0b1120" stroke-width="4" stroke-linecap="round"/>
   <rect x="100" y="180" width="200" height="60" rx="8" fill="#0b1120" opacity="0.8"/>
-  <text x="200" y="218" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">Support</text>
+  <text x="200" y="218" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">Tryghed</text>
 </svg>

@@ -23,7 +23,7 @@ const serviceValue = [
   { number: "01", title: "Rigtigt valg", text: "Personlig rådgivning før du køber" },
   { number: "02", title: "Klar computer", text: "Opsætning, opdateringer og sikkerhed" },
   { number: "03", title: "Dine ting med", text: "Data flyttet fra den gamle computer" },
-  { number: "04", title: "Hjælp bagefter", text: "6 eller 12 måneders personlig tryghed" },
+  { number: "04", title: "Tryghed bagefter", text: "6 eller 12 måneders personlig tryghed" },
 ];
 
 function cleanName(name: string) {
@@ -49,7 +49,7 @@ function PackageCard({ product }: { product: Product }) {
         <div className="my-4 h-px bg-slate-100" />
         <p className="text-xs font-bold uppercase tracking-[0.14em] text-slate-400">Du får mere end computeren</p>
         <ul className="mt-3 space-y-2.5">
-          {["Klargøring og personlig opsætning", "Dataoverførsel efter behov", `${product.supportMonths} mdr. personlig IT-hjælp`].map((item) => (
+          {["Klargøring og personlig opsætning", "Dataoverførsel efter behov", `${product.supportMonths} mdr. personlig tryghed`].map((item) => (
             <li key={item} className="flex gap-2.5 text-sm leading-snug text-navy"><CheckCircleIcon className="mt-0.5 h-4 w-4 shrink-0 text-green" />{item}</li>
           ))}
         </ul>
@@ -96,7 +96,7 @@ export function ProductGrid({ products }: ProductGridProps) {
         </div>
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 rounded-2xl bg-navy px-5 py-4 text-white md:px-6"><p className="text-sm font-semibold"><span className="text-green">✓</span> Alle computerpakker leveres opsat og klar til dig</p><a href="tel:+4531364524" className="text-sm font-bold text-green hover:text-white">I tvivl? Ring 31 36 45 24 →</a></div>
         <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{packages.map((product) => <PackageCard key={product.id} product={product} />)}</div>
-        {services.length > 0 && <div className="mt-16"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Også uden computerkøb</p><h2 className="mt-2 text-2xl font-bold tracking-tight text-navy md:text-3xl">Hjælp, tryghed og tilbehør</h2></div><Link href="/butik" className="text-sm font-bold text-navy hover:text-green">Se hele butikken →</Link></div><div className="mt-6 grid gap-4 lg:grid-cols-3">{services.map((product) => <ServiceCard key={product.id} product={product} />)}</div></div>}
+        {services.length > 0 && <div className="mt-16"><div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Også uden computerkøb</p><h2 className="mt-2 text-2xl font-bold tracking-tight text-navy md:text-3xl">Tryghed, fjernhjælp og tilbehør</h2></div><Link href="/butik" className="text-sm font-bold text-navy hover:text-green">Se hele butikken →</Link></div><div className="mt-6 grid gap-4 lg:grid-cols-3">{services.map((product) => <ServiceCard key={product.id} product={product} />)}</div></div>}
       </div>
     </section>
   );

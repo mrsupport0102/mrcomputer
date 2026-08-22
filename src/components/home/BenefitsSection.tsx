@@ -3,8 +3,8 @@ import { CheckCircleIcon, ShieldIcon, ClockIcon, HeartIcon } from "./icons";
 
 const benefits = [
   "Levering i hele Danmark",
-  "Dansk IT-hjælp inkluderet",
-  "Hurtig hjælp via fjernhjælp",
+  "Dansk tryghed inkluderet",
+  "Hurtig fjernhjælp inkluderet",
   "Klar til brug fra første sekund",
   "Samme kontaktperson hver gang",
   "6 eller 12 måneders tryghedsaftale",
@@ -38,7 +38,7 @@ export function BenefitsSection() {
         <SectionHeader
           eyebrow="Hvorfor MR Computer"
           title="Mere end bare en computer"
-          description="Du køber ikke kun hardware — du får en komplet løsning med opsætning, hjælp og tryghed."
+          description="Du køber ikke kun hardware — du får en komplet løsning med opsætning, fjernhjælp og tryghed."
         />
 
         <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">

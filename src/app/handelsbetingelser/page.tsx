@@ -20,7 +20,7 @@ export default function LegalPage() {
         <section id="handelsbetingelser" className="mt-12 scroll-mt-24">
           <h2 className="text-2xl font-bold text-navy">Handelsbetingelser</h2>
           <div className="prose prose-sm mt-4 max-w-none text-muted">
-            <p><strong>MR Computer drives af MR Support.</strong></p>
+            <p><strong>MR Computer · CVR 40198237.</strong></p>
             <p>CVR: 40198237 · Lyngbakken 5, 3400 Hillerød</p>
             <p>E-mail: info@mrcomputer.dk · Telefon: 31 36 45 24</p>
             <p>Alle priser er angivet i danske kroner (DKK) inkl. moms.</p>
@@ -34,7 +34,7 @@ export default function LegalPage() {
         <section id="privatlivspolitik" className="mt-12 scroll-mt-24">
           <h2 className="text-2xl font-bold text-navy">Privatlivspolitik</h2>
           <div className="prose prose-sm mt-4 max-w-none text-muted">
-            <p>MR Computer / MR Support er dataansvarlig for behandling af personoplysninger.</p>
+            <p>MR Computer er dataansvarlig for behandling af personoplysninger.</p>
             <p>Vi indsamler navn, adresse, telefon, e-mail og ordreoplysninger for at gennemføre dit køb.</p>
             <p>Oplysninger opbevares i op til 5 år i henhold til bogføringsloven.</p>
             <p>Du har ret til indsigt, rettelse, sletning og dataportabilitet jf. GDPR.</p>

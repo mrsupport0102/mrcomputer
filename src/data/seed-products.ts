@@ -11,9 +11,9 @@ export const seedProducts: Product[] = [
     id: "1",
     slug: "apple-macbook-pakke",
     name: "Apple-MacBook Pakke",
-    shortDescription: "MacBook Air 13 M4 – klar til brug med personlig hjælp.",
+    shortDescription: "MacBook Air 13 M4 – klar til brug med personlig tryghed.",
     description:
-      "Den perfekte løsning til de fleste. Hurtig, driftssikker og skræddersyet til dine behov – med fuld opsætning, dataoverførsel og personlig hjælp.",
+      "Den perfekte løsning til de fleste. Hurtig, driftssikker og skræddersyet til dine behov – med fuld opsætning, dataoverførsel og personlig tryghed.",
     price: 13995,
     category: "pakker",
     featured: true,
@@ -100,7 +100,7 @@ export const seedProducts: Product[] = [
     specs: [
       "Skræddersyet computer efter behov",
       "Fuld opsætning og hjemmeinstallation",
-      "12 måneders fjernstyring og hjælp",
+      "12 måneders fjernhjælp og tryghed",
     ],
     included: defaultIncluded,
     supportMonths: 12,
@@ -144,7 +144,7 @@ export const seedProducts: Product[] = [
     id: "8",
     slug: "tryghedsaftale-12mdr",
     name: "12 mdr. Tryghedsaftale (uden computer)",
-    shortDescription: "Forlænget personlig IT-hjælp uden computerkøb.",
+    shortDescription: "Forlænget personlig tryghed uden computerkøb.",
     description:
       "12 måneders adgang til teknisk rådgivning, fjernhjælp og assistance ved almindelige IT-problemer.",
     price: 4995,
@@ -154,7 +154,7 @@ export const seedProducts: Product[] = [
       "Fjernhjælp",
       "Assistance ved almindelige IT-problemer",
     ],
-    included: ["Personlig kontaktperson", "Hjælp efter aftale inden for arbejdstid"],
+    included: ["Personlig kontaktperson", "Personlig tryghed efter aftale inden for arbejdstid"],
     supportMonths: 12,
     image: "/products/tryghedsaftale.png",
   },

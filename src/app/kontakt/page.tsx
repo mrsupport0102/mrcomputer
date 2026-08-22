@@ -37,7 +37,7 @@ export default function KontaktPage() {
           <div className="rounded-2xl border border-gray-200 bg-white p-6 sm:col-span-2">
             <h2 className="font-bold text-navy">Adresse</h2>
             <p className="mt-2 text-muted">
-              MR Computer / MR Support
+              MR Computer
               <br />
               Lyngbakken 5
               <br />

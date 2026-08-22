@@ -37,7 +37,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <div className="flex flex-1 flex-col p-6">
         <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-green">
-          {product.category === "pakker" ? `${product.supportMonths} mdr. hjælp inkluderet` : product.category === "ydelser" ? "Personlig service" : "Klar til brug"}
+          {product.category === "pakker" ? `${product.supportMonths} mdr. tryghed inkluderet` : product.category === "ydelser" ? "Personlig tryghed" : "Klar til brug"}
         </p>
         <Link href={`/produkter/${product.slug}`}>
           <h3 className="mt-2 text-lg font-bold text-navy group-hover:text-green">

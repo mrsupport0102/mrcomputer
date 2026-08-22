@@ -62,10 +62,10 @@ export default function ShopClient({ products }: ShopClientProps) {
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Alle løsninger</p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">Mere end bare hardware</h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
-            Vælg computer efter dit behov eller få hjælp uden computerkøb. Vores pakker samler udstyr, klargøring, dataoverførsel og personlig IT-hjælp i én gennemskuelig pris.
+            Vælg computer efter dit behov eller køb tryghed uden computer. Vores pakker samler udstyr, klargøring, dataoverførsel og personlig tryghed i én gennemskuelig pris.
           </p>
           <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
-            {["Personlig rådgivning", "Opsat ved levering", "Data flyttet", "Hjælp bagefter"].map((item) => <span key={item} className="rounded-full bg-white/10 px-3 py-2"><span className="text-green">✓</span> {item}</span>)}
+            {["Personlig rådgivning", "Opsat ved levering", "Data flyttet", "Tryghed bagefter"].map((item) => <span key={item} className="rounded-full bg-white/10 px-3 py-2"><span className="text-green">✓</span> {item}</span>)}
           </div>
         </div>
 

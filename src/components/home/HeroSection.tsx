@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { CheckCircleIcon } from "./icons";
 
-const promises = ["Rådgivning før køb", "Klar til brug ved levering", "Personlig hjælp bagefter"];
+const promises = ["Rådgivning før køb", "Klar til brug ved levering", "Personlig tryghed bagefter"];
 
 export function HeroSection() {
   return (
@@ -19,7 +19,7 @@ export function HeroSection() {
             <span className="mt-2 block text-green">En tryg start.</span>
           </h1>
           <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
-            Vi finder den rigtige computer, flytter dine ting og gør den helt klar. Du får én fast kontaktperson og hjælp, når teknikken driller.
+            Vi finder den rigtige computer, flytter dine ting og gør den helt klar. Du får én fast kontaktperson og tryghed, når teknikken driller.
           </p>
           <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
             {promises.map((promise) => <span key={promise} className="flex items-center gap-2 text-sm font-medium text-navy"><CheckCircleIcon className="h-4 w-4 text-green" />{promise}</span>)}
@@ -36,7 +36,7 @@ export function HeroSection() {
         <div className="relative mx-auto w-full max-w-[560px]">
           <div className="absolute inset-x-10 bottom-4 h-20 rounded-full bg-green/20 blur-3xl" aria-hidden />
           <div className="relative aspect-[5/4]"><Image src="/products/tryghedspakke.png" alt="Tryghedspakken fra MR Computer, klar til brug" fill sizes="(max-width: 1024px) 90vw, 520px" className="object-contain p-4 drop-shadow-[0_28px_45px_rgba(11,17,32,0.18)]" priority /></div>
-          <div className="absolute bottom-3 left-0 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-4"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Med i pakken</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · IT-hjælp</p></div>
+          <div className="absolute bottom-3 left-0 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-4"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Med i pakken</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · Tryghed</p></div>
         </div>
       </div>
     </section>

@@ -35,7 +35,7 @@ const steps = [
     step: "5",
     title: "Tryghed inkluderet",
     description:
-      "6 eller 12 måneders personlig IT-hjælp følger med. Du har altid en kontaktperson at ringe til.",
+      "6 eller 12 måneders personlig tryghed følger med. Du har altid en kontaktperson at ringe til.",
   },
 ];
 

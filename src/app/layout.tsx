@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | MR Computer",
   },
   description:
-    "Computerpakker med opsætning, dataoverførsel og personlig IT-hjælp inkluderet. Levering i hele Danmark.",
+    "Computerpakker med opsætning, dataoverførsel og personlig tryghed inkluderet. Levering i hele Danmark.",
   icons: {
     icon: "/logo-hd.png",
     apple: "/logo-hd.png",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     siteName: "MR Computer",
     title: "MR Computer – Ny computer. Klar til brug. Tryghed inkluderet.",
     description:
-      "Computerpakker med opsætning, dataoverførsel og personlig IT-hjælp inkluderet.",
+      "Computerpakker med opsætning, dataoverførsel og personlig tryghed inkluderet.",
   },
 };
 

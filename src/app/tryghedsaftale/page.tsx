@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Tryghedsaftale",
-  description: "6 eller 12 måneders personlig IT-hjælp inkluderet i alle computerpakker.",
+  description: "6 eller 12 måneders personlig tryghed inkluderet i alle computerpakker.",
 };
 
 const included = [
@@ -11,7 +11,7 @@ const included = [
   "Fjernhjælp",
   "Assistance ved almindelige IT-problemer",
   "Personlig kontaktperson",
-  "Hjælp efter aftale inden for arbejdstid",
+  "Personlig tryghed efter aftale inden for arbejdstid",
 ];
 
 const notIncluded = [
@@ -28,8 +28,8 @@ export default function TryghedsaftalePage() {
       <div className="mx-auto max-w-3xl px-4 lg:px-6">
         <h1 className="text-3xl font-bold text-navy">Tryghedsaftale</h1>
         <p className="mt-4 text-muted">
-          Alle vores computerpakker inkluderer 6 eller 12 måneders personlig IT-hjælp
-          leveret af MR Support. Det er ikke et abonnement – det fornyes ikke automatisk.
+          Alle vores computerpakker inkluderer 6 eller 12 måneders personlig tryghed
+          leveret af MR Computer. Det er ikke et abonnement – det fornyes ikke automatisk.
         </p>
 
         <div className="mt-10 rounded-2xl bg-green/10 p-6">

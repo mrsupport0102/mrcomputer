@@ -19,7 +19,7 @@ const steps = [
   {
     number: "04",
     title: "Klar til brug",
-    description: "Hjemmeinstallation og hjælp — du er i gang med det samme.",
+    description: "Hjemmeinstallation og tryghed — du er i gang med det samme.",
   },
 ];
 

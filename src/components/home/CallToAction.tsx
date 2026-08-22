@@ -27,7 +27,7 @@ export function CallToAction() {
         </div>
 
         <p className="mt-6 text-sm text-white/50">
-          MR Computer · MR Support · Lyngbakken 5, 3400 Hillerød
+          MR Computer · Lyngbakken 5, 3400 Hillerød
         </p>
       </div>
     </section>
