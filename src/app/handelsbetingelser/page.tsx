@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Handelsbetingelser",
+  alternates: { canonical: "/handelsbetingelser" },
 };
 
 export default function LegalPage() {

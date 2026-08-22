@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata: Metadata = {
   title: "Kontakt",
   description: "Kontakt MR Computer – ring, skriv eller besøg os i Hillerød.",
+  alternates: { canonical: "/kontakt" },
 };
 
 export default function KontaktPage() {

@@ -7,6 +7,14 @@ import { AboutSection } from "@/components/home/AboutSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CallToAction } from "@/components/home/CallToAction";
 import { getAllProducts } from "@/lib/products-store";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Computer klar til brug med personlig tryghed",
+  description:
+    "Køb en ny bærbar computer, der leveres opsat og klar til brug med dine filer, billeder og personlig tryghed.",
+  alternates: { canonical: "/" },
+};
 
 export const revalidate = 60;
 

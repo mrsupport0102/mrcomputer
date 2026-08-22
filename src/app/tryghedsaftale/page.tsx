@@ -2,14 +2,15 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Tryghedsaftale",
+  title: "Personlig tryghed til din computer",
   description: "6 eller 12 måneders personlig tryghed inkluderet i alle computerpakker.",
+  alternates: { canonical: "/tryghedsaftale" },
 };
 
 const included = [
-  "Teknisk rådgivning",
-  "Fjernhjælp",
-  "Assistance ved almindelige IT-problemer",
+  "Personlig rådgivning om din computer",
+  "Tryghed via sikker fjernforbindelse",
+  "Personlig tryghed ved almindelige computerudfordringer",
   "Personlig kontaktperson",
   "Personlig tryghed efter aftale inden for arbejdstid",
 ];

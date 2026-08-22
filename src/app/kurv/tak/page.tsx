@@ -5,6 +5,7 @@ import { ThankYouContent } from "@/components/cart/ThankYouContent";
 
 export const metadata = {
   title: "Tak for din bestilling",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouPage() {

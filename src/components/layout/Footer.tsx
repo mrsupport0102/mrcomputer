@@ -19,10 +19,18 @@ export function Footer() {
           </h2>
           <p className="mt-3 max-w-md text-sm leading-relaxed text-white/80">
             Hos MR Computer gør vi det anderledes. Vi rådgiver dig allerede inden købet,
-            så du får den rigtige løsning fra start. Herefter hjælper vi med opsætning
+            så du får den rigtige løsning fra start. Herefter sørger vi for opsætning
             og installation i hjemmet, og med en efterfølgende tryghedsaftale sikrer vi,
-            at du aldrig står alene med dine IT-udfordringer.
+            at du aldrig står alene med din computer.
           </p>
+          <nav className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-sm" aria-label="Computerkategorier">
+            <Link href="/baerbar-computer" className="text-white/75 hover:text-green">Bærbare computere</Link>
+            <Link href="/computer-klar-til-brug" className="text-white/75 hover:text-green">Computer klar til brug</Link>
+            <Link href="/computer-til-seniorer" className="text-white/75 hover:text-green">Computer til seniorer</Link>
+            <Link href="/macbook-klar-til-brug" className="text-white/75 hover:text-green">MacBook-pakker</Link>
+            <Link href="/gaming-computer" className="text-white/75 hover:text-green">Gaming-computere</Link>
+            <Link href="/guides" className="text-white/75 hover:text-green">Computerguides</Link>
+          </nav>
         </div>
 
         <div>

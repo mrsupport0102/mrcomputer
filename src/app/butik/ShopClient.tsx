@@ -61,7 +61,7 @@ export default function ShopClient({ products }: ShopClientProps) {
       <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6">
         <div className="rounded-2xl bg-navy px-4 py-5 text-white sm:rounded-[2rem] sm:px-6 sm:py-8 md:px-10 md:py-10">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Alle løsninger</p>
-          <h1 className="mt-2 text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl md:text-5xl">Mere end bare hardware</h1>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl md:text-5xl">Find din nye computer – leveret klar til brug</h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/70 sm:mt-4 sm:text-base">
             Vælg computer efter dit behov eller køb tryghed uden computer. Vores pakker samler udstyr, klargøring, dataoverførsel og personlig tryghed i én gennemskuelig pris.
           </p>
@@ -69,6 +69,20 @@ export default function ShopClient({ products }: ShopClientProps) {
             {["Personlig rådgivning", "Opsat ved levering", "Data flyttet", "Tryghed bagefter"].map((item) => <span key={item} className="rounded-full bg-white/10 px-3 py-2"><span className="text-green">✓</span> {item}</span>)}
           </div>
         </div>
+
+        <nav className="mt-5 flex flex-wrap gap-2 text-sm" aria-label="Computer kategorier">
+          {[
+            ["/baerbar-computer", "Bærbare computere"],
+            ["/computer-klar-til-brug", "Computer klar til brug"],
+            ["/computer-til-seniorer", "Computer til seniorer"],
+            ["/macbook-klar-til-brug", "MacBook-pakker"],
+            ["/gaming-computer", "Gaming-computere"],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="rounded-full border border-slate-200 bg-white px-4 py-2 font-semibold text-navy hover:border-green hover:text-green">
+              {label}
+            </a>
+          ))}
+        </nav>
 
         <div className="mt-4 flex items-center justify-between gap-2 sm:mt-8 sm:flex-wrap sm:gap-4">
           <div className="flex min-w-0 gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:pb-0">

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Forløb",
-  description: "Sådan foregår det at købe computer hos MR Computer – fra rådgivning til opsætning.",
+  title: "Sådan får du en ny computer klar til brug",
+  description: "Se hele forløbet fra valg af computer til dataoverførsel, levering og installation hjemme hos dig.",
+  alternates: { canonical: "/forloeb" },
 };
 
 const steps = [

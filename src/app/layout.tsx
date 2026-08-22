@@ -4,8 +4,8 @@ import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { ConditionalShell } from "@/components/layout/ConditionalShell";
 import { GoogleAdsTracking } from "@/components/analytics/GoogleAdsTracking";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationJsonLd, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s | MR Computer",
   },
   description:
-    "Computerpakker med opsætning, dataoverførsel og personlig tryghed inkluderet. Levering i hele Danmark.",
+    "Bærbare computere og computerpakker med opsætning, dataoverførsel og personlig tryghed. Leveret klar til brug i hele Danmark.",
   icons: {
     icon: "/icon",
     apple: "/logo-hd.png",
@@ -25,7 +25,14 @@ export const metadata: Metadata = {
     siteName: "MR Computer",
     title: "MR Computer – Ny computer. Klar til brug. Tryghed inkluderet.",
     description:
-      "Computerpakker med opsætning, dataoverførsel og personlig tryghed inkluderet.",
+      "Bærbare computere og computerpakker med opsætning, dataoverførsel og personlig tryghed.",
+    images: [{ url: "/hero-laptop.png", alt: "Computer fra MR Computer klar til brug" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "MR Computer – computer klar til brug",
+    description: "Computerpakker med opsætning, dataoverførsel og personlig tryghed.",
+    images: ["/hero-laptop.png"],
   },
 };
 
@@ -37,6 +44,7 @@ export default function RootLayout({
   return (
     <html lang="da" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
+        <JsonLd data={organizationJsonLd} />
         <Script id="google-consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
