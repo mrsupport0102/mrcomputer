@@ -13,6 +13,8 @@ interface OrderConfirmationProps {
   paymentId: string | null;
 }
 
+const GOOGLE_ADS_PURCHASE_DESTINATION = "AW-18404835407/YGGuCN-jgeYcEM-AjshE";
+
 export function OrderConfirmation({ paymentId }: OrderConfirmationProps) {
   const [details, setDetails] = useState<PaymentDetails | null>(null);
   const [fetchError, setFetchError] = useState<string | null>(null);
@@ -34,6 +36,21 @@ export function OrderConfirmation({ paymentId }: OrderConfirmationProps) {
         );
       });
   }, [paymentId]);
+
+  useEffect(() => {
+    if (!details || typeof window.gtag !== "function") return;
+
+    const trackingKey = `mrcomputer-google-ads-purchase:${details.orderId}`;
+    if (window.localStorage.getItem(trackingKey)) return;
+
+    window.gtag("event", "conversion", {
+      send_to: GOOGLE_ADS_PURCHASE_DESTINATION,
+      value: details.amountTotal / 100,
+      currency: "DKK",
+      transaction_id: details.orderId,
+    });
+    window.localStorage.setItem(trackingKey, "sent");
+  }, [details]);
 
   if (!paymentId) {
     return (

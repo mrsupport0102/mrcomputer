@@ -44,8 +44,11 @@ export default function LegalPage() {
         <section id="cookiepolitik" className="mt-12 scroll-mt-24">
           <h2 className="text-2xl font-bold text-navy">Cookiepolitik</h2>
           <div className="prose prose-sm mt-4 max-w-none text-muted">
-            <p>Vi anvender cookies til at få hjemmesiden til at fungere korrekt og forbedre brugeroplevelsen.</p>
-            <p>Nødvendige cookies bruges til indkøbskurv og stabil drift.</p>
+            <p>Vi anvender nødvendige cookies og lokal lagring til indkøbskurv og stabil drift.</p>
+            <p>
+              Med dit samtykke anvender vi desuden Google Ads-cookies til at måle, om vores
+              annoncer fører til køb. Du kan afvise disse cookies uden at miste adgang til webshoppen.
+            </p>
           </div>
         </section>
 

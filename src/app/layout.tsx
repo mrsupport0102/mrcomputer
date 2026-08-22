@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
 import { ConditionalShell } from "@/components/layout/ConditionalShell";
+import { GoogleAdsTracking } from "@/components/analytics/GoogleAdsTracking";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mrcomputer.dk";
 
@@ -35,6 +37,20 @@ export default function RootLayout({
   return (
     <html lang="da" className="h-full antialiased">
       <body className="flex min-h-full flex-col">
+        <Script id="google-consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              ad_storage: 'denied',
+              analytics_storage: 'denied',
+              ad_user_data: 'denied',
+              ad_personalization: 'denied',
+              wait_for_update: 500
+            });
+          `}
+        </Script>
+        <GoogleAdsTracking />
         <CartProvider>
           <ConditionalShell>{children}</ConditionalShell>
         </CartProvider>
