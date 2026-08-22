@@ -33,15 +33,21 @@ export function HeroSection() {
             <span className="text-xs text-muted">20+ års erfaring · Levering i hele Danmark</span>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[580px] pb-8">
+        <div className="relative mx-auto w-full max-w-[590px] pb-10 pt-3">
           <div className="absolute -inset-5 rounded-[3rem] bg-green/10 blur-3xl" aria-hidden />
-          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-navy/15">
-            <Image src="/hero-tryghed-senior.png" alt="Personlig gennemgang af en ny computer i trygge omgivelser" fill sizes="(max-width: 1024px) 94vw, 580px" className="object-cover" priority />
-            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-navy/55 to-transparent" aria-hidden />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2.25rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-navy/15">
+            <Image src="/hero-tryghed-senior.png" alt="Tryg computeroplevelse i hjemlige omgivelser" fill sizes="(max-width: 1024px) 94vw, 590px" className="scale-105 object-cover opacity-75 blur-[1px]" priority />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-white/80" aria-hidden />
+            <div className="absolute inset-x-[11%] bottom-4 top-[20%] z-10">
+              <Image src="/products/tryghedspakke.png" alt="Ny computer fra MR Computer" fill sizes="(max-width: 1024px) 78vw, 460px" className="object-contain drop-shadow-[0_26px_30px_rgba(11,17,32,0.34)]" priority />
+            </div>
+            <div className="absolute left-5 top-5 z-20 rounded-full border border-white/70 bg-white/90 px-4 py-2 shadow-lg backdrop-blur">
+              <p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Komplet computerpakke</p>
+            </div>
           </div>
-          <div className="absolute bottom-0 left-4 right-4 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-6 sm:right-auto sm:min-w-[330px]">
+          <div className="absolute bottom-0 left-4 right-4 z-20 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-6 sm:right-auto sm:min-w-[350px]">
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green/10 text-xl text-green">✓</span>
-            <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Du står aldrig alene</p><p className="mt-1 text-sm font-bold text-navy">Én fast kontaktperson · Tryghed inkluderet</p></div>
+            <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Mere end computeren</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · Tryghed</p></div>
           </div>
         </div>
       </div>
