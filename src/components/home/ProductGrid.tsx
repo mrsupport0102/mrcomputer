@@ -69,7 +69,7 @@ function PackageCard({ product }: { product: Product }) {
 function ServiceCard({ product }: { product: Product }) {
   return (
     <Link href={`/produkter/${product.slug}`} className="group flex items-center gap-5 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-green/40 hover:shadow-lg sm:p-5">
-      <div className="relative h-24 w-28 shrink-0 overflow-hidden rounded-2xl bg-slate-50"><Image src={product.image} alt="" fill sizes="112px" className="object-contain p-3" /></div>
+      <div className="relative h-24 w-28 shrink-0 overflow-hidden rounded-2xl border border-slate-100 bg-[#f4f1ed]"><Image src={product.image} alt="" fill sizes="112px" className="scale-110 object-cover" /></div>
       <div className="min-w-0 flex-1">
         <p className="text-xs font-bold uppercase tracking-wider text-green">{product.category === "ydelser" ? "Personlig service" : "Tilbehør klar til brug"}</p>
         <h3 className="mt-1 font-bold text-navy group-hover:text-green">{product.name}</h3>
