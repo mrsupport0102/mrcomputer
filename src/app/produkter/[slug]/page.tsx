@@ -71,6 +71,12 @@ export default async function ProductPage({ params }: Props) {
             </div>
             <p className="mt-6 leading-relaxed text-muted">{product.description}</p>
 
+            <div className="mt-6 rounded-2xl bg-navy px-5 py-4 text-white">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-green">Hurtig personlig kontakt</p>
+              <p className="mt-1 font-bold">Gennemfør dit køb inden kl. 16 og bliv ringet op allerede i dag.</p>
+              <p className="mt-1 text-sm leading-relaxed text-white/70">Køber du efter kl. 16, kontakter vi dig næste dag.</p>
+            </div>
+
             <div className="mt-7 rounded-2xl border border-green/20 bg-green/5 p-5">
               <p className="text-xs font-bold uppercase tracking-[0.14em] text-green">Det følger med</p>
               <ul className="mt-3 space-y-3">

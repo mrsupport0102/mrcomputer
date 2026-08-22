@@ -53,6 +53,9 @@ export function ProductCard({ product }: ProductCardProps) {
           ))}
         </ul>
         <div className="mt-auto flex flex-col gap-2 pt-3 sm:mt-5 sm:gap-3 sm:pt-0">
+          <p className="text-[10px] font-semibold leading-tight text-green sm:text-xs">
+            Køb inden kl. 16 — bliv ringet op i dag
+          </p>
           <PriceDisplay price={product.price} salePrice={product.salePrice} />
           <ButtonNative
             variant="primary"

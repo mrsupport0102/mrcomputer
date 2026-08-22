@@ -54,6 +54,9 @@ function PackageCard({ product }: { product: Product }) {
           ))}
         </ul>
         <div className="mt-auto pt-3 sm:pt-6">
+          <p className="mb-2 text-[10px] font-semibold leading-tight text-green sm:mb-3 sm:text-xs">
+            Køb inden kl. 16 — bliv ringet op i dag
+          </p>
           <p className="hidden text-xs text-slate-400 sm:block">Komplet pakkepris</p>
           <div className="flex flex-col sm:mt-1 sm:flex-row sm:items-baseline sm:gap-2"><span className="text-base font-bold tracking-tight text-navy sm:text-2xl">{formatPrice(price)}</span>{product.salePrice && <span className="hidden text-sm text-slate-400 line-through sm:inline">{formatPrice(product.price)}</span>}</div>
           <div className="mt-2 sm:mt-4 sm:grid sm:grid-cols-2 sm:gap-2">

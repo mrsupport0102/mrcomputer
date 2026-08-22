@@ -102,13 +102,20 @@ export function CartPageClient() {
         </ul>
 
         <div className="mt-6 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+          <div className="mb-6 flex gap-4 rounded-2xl border border-green/20 bg-green/5 p-4 sm:items-center sm:p-5">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green text-lg font-bold text-white">✓</span>
+            <div>
+              <p className="font-bold text-navy">Gennemfør dit køb inden kl. 16 og bliv ringet op allerede i dag</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">Ved køb efter kl. 16 kontakter vi dig næste dag. Hele forløbet leveres normalt inden for 3 hverdage.</p>
+            </div>
+          </div>
           <div className="flex justify-between text-lg font-bold text-navy">
             <span>Total</span>
             <span>{formatPrice(totalPrice)}</span>
           </div>
           <p className="mt-2 text-sm text-muted">
-            Sikker betaling med kort og Apple Pay via QuickPay. Vi kontakter dig efter købet
-            for at aftale levering og opsætning.
+            Sikker betaling med kort og Apple Pay via QuickPay. Efter købet aftaler vi levering
+            og opsætning med dig personligt.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <CheckoutButton />
