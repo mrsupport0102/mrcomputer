@@ -45,5 +45,9 @@ export function getCheckoutTotalOre(lines: ValidatedCartLine[]): number {
 }
 
 export function createOrderId(): string {
-  return `mc-${Date.now()}-${randomUUID().slice(0, 8)}`;
+  // QuickPay only accepts 4-20 alphanumeric characters for order IDs.
+  const timestamp = Date.now().toString(36);
+  const suffix = randomUUID().replaceAll("-", "").slice(0, 6);
+
+  return `mc${timestamp}${suffix}`;
 }
