@@ -56,27 +56,27 @@ export default function ShopClient({ products }: ShopClientProps) {
   }, [category, products, sort]);
 
   return (
-    <div className="bg-[#f6f8f7] py-12 md:py-16">
-      <div className="mx-auto max-w-7xl px-4 lg:px-6">
-        <div className="rounded-[2rem] bg-navy px-6 py-8 text-white md:px-10 md:py-10">
+    <div className="bg-[#f6f8f7] py-5 sm:py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-3 sm:px-4 lg:px-6">
+        <div className="rounded-2xl bg-navy px-4 py-5 text-white sm:rounded-[2rem] sm:px-6 sm:py-8 md:px-10 md:py-10">
           <p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Alle løsninger</p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">Mere end bare hardware</h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+          <h1 className="mt-2 text-2xl font-bold tracking-tight sm:mt-3 sm:text-3xl md:text-5xl">Mere end bare hardware</h1>
+          <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/70 sm:mt-4 sm:text-base">
             Vælg computer efter dit behov eller køb tryghed uden computer. Vores pakker samler udstyr, klargøring, dataoverførsel og personlig tryghed i én gennemskuelig pris.
           </p>
-          <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
+          <div className="mt-6 hidden flex-wrap gap-2 text-xs font-semibold sm:flex">
             {["Personlig rådgivning", "Opsat ved levering", "Data flyttet", "Tryghed bagefter"].map((item) => <span key={item} className="rounded-full bg-white/10 px-3 py-2"><span className="text-green">✓</span> {item}</span>)}
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex flex-wrap gap-2">
+        <div className="mt-4 flex items-center justify-between gap-2 sm:mt-8 sm:flex-wrap sm:gap-4">
+          <div className="flex min-w-0 gap-1.5 overflow-x-auto pb-1 sm:flex-wrap sm:gap-2 sm:overflow-visible sm:pb-0">
             {categories.map((cat) => (
               <button
                 key={cat.value}
                 type="button"
                 onClick={() => setCategory(cat.value)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`shrink-0 rounded-full px-3 py-2 text-xs font-medium transition-colors sm:px-4 sm:text-sm ${
                   category === cat.value
                     ? "bg-navy text-white shadow-sm"
                     : "border border-slate-200 bg-white text-navy hover:border-green/40"
@@ -90,7 +90,7 @@ export default function ShopClient({ products }: ShopClientProps) {
           <select
             value={sort}
             onChange={(event) => setSort(event.target.value as SortOption)}
-            className="rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm"
+            className="max-w-28 shrink-0 rounded-lg border border-gray-200 bg-white px-2 py-2 text-xs sm:max-w-none sm:px-4 sm:text-sm"
             aria-label="Sortér produkter"
           >
             <option value="default">Standardsortering</option>
@@ -100,11 +100,11 @@ export default function ShopClient({ products }: ShopClientProps) {
           </select>
         </div>
 
-        <p className="mt-6 text-sm text-muted">
+        <p className="mt-3 text-xs text-muted sm:mt-6 sm:text-sm">
           Viser {filtered.length} resultater
         </p>
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-3 grid grid-cols-2 gap-2.5 sm:mt-6 sm:gap-6 lg:grid-cols-3">
           {filtered.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
