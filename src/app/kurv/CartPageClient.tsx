@@ -107,7 +107,7 @@ export function CartPageClient() {
             <span>{formatPrice(totalPrice)}</span>
           </div>
           <p className="mt-2 text-sm text-muted">
-            Sikker betaling med kort, MobilePay m.m. via QuickPay. Vi kontakter dig efter købet
+            Sikker betaling med kort og Apple Pay via QuickPay. Vi kontakter dig efter købet
             for at aftale levering og opsætning.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
