@@ -36,7 +36,7 @@ export function HeroSection() {
         <div className="relative mx-auto w-full max-w-[590px] pb-10 pt-3">
           <div className="absolute -inset-5 rounded-[3rem] bg-green/10 blur-3xl" aria-hidden />
           <div className="relative aspect-[4/3] overflow-hidden rounded-[2.25rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-navy/15">
-            <Image src="/hero-tryghed-par.png" alt="Tryghed i rolige og hjemlige omgivelser" fill sizes="(max-width: 1024px) 94vw, 590px" className="scale-105 object-cover opacity-70 blur-[1px]" priority />
+            <Image src="/hero-tryghed-mathias.png" alt="Mathias skaber tryghed i rolige og hjemlige omgivelser" fill sizes="(max-width: 1024px) 94vw, 590px" className="scale-105 object-cover opacity-70 blur-[1px]" priority />
             <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-white/5 to-white/80" aria-hidden />
             <div className="absolute inset-x-[11%] bottom-4 top-[20%] z-10">
               <Image src="/products/tryghedspakke.png" alt="Ny computer fra MR Computer" fill sizes="(max-width: 1024px) 78vw, 460px" className="object-contain drop-shadow-[0_26px_30px_rgba(11,17,32,0.34)]" priority />
