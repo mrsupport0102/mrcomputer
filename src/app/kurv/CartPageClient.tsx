@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { formatPrice } from "@/lib/format-price";
@@ -26,8 +27,8 @@ export function CartPageClient() {
   }
 
   return (
-    <div className="py-12">
-      <div className="mx-auto max-w-3xl px-4 lg:px-6">
+    <div className="bg-[#f6f8f7] py-12 md:py-16">
+      <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-navy">Indkøbskurv</h1>
 
         {cancelled && (
@@ -36,55 +37,71 @@ export function CartPageClient() {
           </p>
         )}
 
-        <ul className="mt-8 divide-y divide-gray-200">
+        <ul className="mt-8 space-y-4">
           {items.map(({ product, quantity }) => {
             const price = product.salePrice ?? product.price;
             return (
-              <li key={product.id} className="flex flex-wrap items-center gap-4 py-6">
-                <div className="flex-1">
+              <li key={product.id} className="grid items-center gap-4 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm sm:grid-cols-[112px_minmax(0,1fr)_auto] sm:gap-6 sm:p-5">
+                <Link href={`/produkter/${product.slug}`} className="relative h-24 w-28 overflow-hidden rounded-2xl border border-slate-100 bg-gradient-to-br from-slate-50 to-white">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="112px"
+                    className={product.category === "pakker" ? "object-contain p-2" : "object-cover"}
+                  />
+                </Link>
+                <div className="min-w-0">
                   <Link
                     href={`/produkter/${product.slug}`}
-                    className="font-semibold text-navy hover:text-green"
+                    className="text-lg font-bold text-navy hover:text-green"
                   >
                     {product.name}
                   </Link>
-                  <p className="text-sm text-muted">{formatPrice(price)} stk.</p>
+                  <p className="mt-1 text-sm text-muted">{formatPrice(price)} pr. stk.</p>
+                  {product.supportMonths > 0 && (
+                    <p className="mt-2 text-xs font-semibold uppercase tracking-[0.1em] text-green">
+                      {product.supportMonths} mdr. tryghed inkluderet
+                    </p>
+                  )}
                 </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => updateQuantity(product.id, quantity - 1)}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
-                    aria-label="Reducer antal"
-                  >
-                    −
-                  </button>
-                  <span className="w-8 text-center">{quantity}</span>
-                  <button
-                    type="button"
-                    onClick={() => updateQuantity(product.id, quantity + 1)}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 hover:bg-gray-50"
-                    aria-label="Forøg antal"
-                  >
-                    +
-                  </button>
+                <div className="flex items-center justify-between gap-4 border-t border-slate-100 pt-4 sm:justify-end sm:border-0 sm:pt-0">
+                  <div className="flex items-center gap-2 rounded-full border border-slate-200 p-1">
+                    <button
+                      type="button"
+                      onClick={() => updateQuantity(product.id, quantity - 1)}
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-lg text-navy transition hover:bg-slate-100"
+                      aria-label="Reducer antal"
+                    >
+                      −
+                    </button>
+                    <span className="w-7 text-center font-semibold text-navy">{quantity}</span>
+                    <button
+                      type="button"
+                      onClick={() => updateQuantity(product.id, quantity + 1)}
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-lg text-navy transition hover:bg-slate-100"
+                      aria-label="Forøg antal"
+                    >
+                      +
+                    </button>
+                  </div>
+                  <div className="min-w-28 text-right">
+                    <p className="font-bold text-navy">{formatPrice(price * quantity)}</p>
+                    <button
+                      type="button"
+                      onClick={() => removeItem(product.id)}
+                      className="mt-1 text-xs font-medium text-slate-400 hover:text-red-500"
+                    >
+                      Fjern vare
+                    </button>
+                  </div>
                 </div>
-                <p className="w-24 text-right font-semibold text-navy">
-                  {formatPrice(price * quantity)}
-                </p>
-                <button
-                  type="button"
-                  onClick={() => removeItem(product.id)}
-                  className="text-sm text-red-500 hover:underline"
-                >
-                  Fjern
-                </button>
               </li>
             );
           })}
         </ul>
 
-        <div className="mt-8 rounded-2xl border border-gray-200 bg-white p-6">
+        <div className="mt-6 rounded-3xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
           <div className="flex justify-between text-lg font-bold text-navy">
             <span>Total</span>
             <span>{formatPrice(totalPrice)}</span>
