@@ -2,136 +2,41 @@ import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { CheckCircleIcon } from "./icons";
 
-const heroPoints = [
-  "Opsætning inkluderet",
-  "Dataoverførsel inkluderet",
-  "Gratis rådgivning før køb",
-];
-
-const packageIncludes = [
-  "Hjemmeinstallation",
-  "Dataoverførsel",
-  "Personlig IT-hjælp",
-];
+const promises = ["Rådgivning før køb", "Klar til brug ved levering", "Personlig hjælp bagefter"];
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-gray-100 bg-white lg:min-h-0">
+    <section className="relative overflow-hidden border-b border-slate-100 bg-white">
       <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
-
-      <div className="relative mx-auto flex min-h-[calc(100svh-4.25rem)] max-w-6xl flex-col px-4 py-5 sm:min-h-0 sm:py-10 lg:px-6 lg:py-16">
-        <div className="grid flex-1 items-center gap-5 sm:gap-8 lg:grid-cols-[1fr_0.9fr] lg:gap-14">
-          <div className="flex min-h-0 flex-col lg:max-w-xl">
-            <div className="flex items-start gap-3 sm:gap-4 lg:block">
-              <div className="min-w-0 flex-1">
-                <div className="hidden items-center gap-2 rounded-full border border-green/20 bg-green/5 px-3 py-1.5 sm:inline-flex">
-                  <span className="h-1.5 w-1.5 rounded-full bg-green" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy/70">
-                    Opsætning · Dataoverførsel · Personlig hjælp
-                  </span>
-                </div>
-
-                <h1 className="text-[1.65rem] font-bold leading-[1.1] tracking-tight text-navy sm:mt-5 sm:text-5xl">
-                  Ny computer.
-                  <span className="block text-navy/90">Klar til brug.</span>
-                  <span className="mt-0.5 block bg-gradient-to-r from-green to-emerald-600 bg-clip-text text-transparent sm:mt-1">
-                    Tryghed inkluderet.
-                  </span>
-                </h1>
-              </div>
-
-              <div className="relative h-32 w-32 shrink-0 sm:h-36 sm:w-36 lg:hidden">
-                <Image
-                  src="/hero-laptop.png"
-                  alt=""
-                  fill
-                  sizes="128px"
-                  className="object-contain drop-shadow-[0_16px_32px_rgba(11,17,32,0.16)]"
-                  priority
-                />
-              </div>
-            </div>
-
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted sm:mt-5 sm:text-base md:text-lg">
-              Vi leverer skræddersyede computerpakker med opsætning,
-              dataoverførsel og dansk IT-hjælp — så du er klar fra første
-              sekund.
-            </p>
-
-            <ul className="mt-3 space-y-1.5 sm:mt-6 sm:space-y-2.5">
-              {heroPoints.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-[13px] text-navy sm:gap-2.5 sm:text-sm md:text-base">
-                  <CheckCircleIcon className="h-4 w-4 shrink-0 text-green sm:h-5 sm:w-5" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-
-            <div className="mt-5 hidden border-l-2 border-green pl-4 sm:mt-7 lg:block">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-green">
-                Inkluderet i alle pakker
-              </p>
-              <p className="mt-1 text-base font-bold text-navy md:text-lg">
-                6 eller 12 måneders tryghed
-              </p>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {packageIncludes.map((item) => (
-                  <span
-                    key={item}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-surface px-3 py-1.5 text-xs font-medium text-navy"
-                  >
-                    <span className="text-green">✓</span>
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-auto pt-5 sm:mt-8 sm:pt-0">
-              <div className="flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-3">
-                <Button
-                  href="/butik"
-                  className="w-full px-6 py-3 shadow-md shadow-green/20 sm:w-auto"
-                >
-                  Se computerpakker
-                </Button>
-                <Button
-                  href="tel:+4531364524"
-                  variant="outline"
-                  className="hidden px-6 py-3 sm:inline-flex"
-                >
-                  Ring 31 36 45 24
-                </Button>
-              </div>
-
-              <div className="mt-5 hidden items-center gap-4 border-t border-gray-200/80 pt-5 sm:flex lg:mt-7 lg:pt-6">
-                <Image
-                  src="/trustpilot.png"
-                  alt="Trustpilot"
-                  width={140}
-                  height={18}
-                  className="h-[18px] w-auto opacity-90"
-                  style={{ width: "auto", height: "18px" }}
-                />
-                <span className="hidden h-4 w-px bg-gray-200 md:block" />
-                <p className="text-xs text-muted md:text-sm">
-                  Personlig rådgivning · Levering i hele Danmark
-                </p>
-              </div>
-            </div>
+      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-6 lg:py-20">
+        <div className="max-w-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-green/20 bg-green/5 px-3 py-1.5">
+            <span className="h-2 w-2 rounded-full bg-green" />
+            <span className="text-[11px] font-bold uppercase tracking-[0.16em] text-navy/70">Computer + personlig service i én pakke</span>
           </div>
-
-          <div className="relative hidden items-center justify-center lg:flex lg:justify-end">
-            <div className="relative aspect-square w-full max-w-[440px] lg:max-w-[480px]">
-              <Image
-                src="/hero-laptop.png"
-                alt="Moderne laptop klar til brug"
-                fill
-                sizes="480px"
-                className="object-contain drop-shadow-[0_24px_48px_rgba(11,17,32,0.18)]"
-              />
-            </div>
+          <h1 className="mt-5 text-[2.5rem] font-bold leading-[1.02] tracking-[-0.045em] text-navy sm:text-5xl lg:text-[4.1rem]">
+            Ikke bare en ny computer.
+            <span className="mt-2 block text-green">En tryg start.</span>
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-muted md:text-lg">
+            Vi finder den rigtige computer, flytter dine ting og gør den helt klar. Du får én fast kontaktperson og hjælp, når teknikken driller.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+            {promises.map((promise) => <span key={promise} className="flex items-center gap-2 text-sm font-medium text-navy"><CheckCircleIcon className="h-4 w-4 text-green" />{promise}</span>)}
           </div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <Button href="#pakker" className="px-7 py-3.5 text-base shadow-lg shadow-green/20">Find din computerpakke</Button>
+            <Button href="tel:+4531364524" variant="outline" className="px-7 py-3.5 text-base">Få gratis rådgivning</Button>
+          </div>
+          <div className="mt-7 flex flex-wrap items-center gap-4 border-t border-slate-100 pt-5">
+            <Image src="/trustpilot.png" alt="Trustpilot" width={140} height={18} className="h-[18px] w-auto" priority />
+            <span className="text-xs text-muted">20+ års erfaring · Levering i hele Danmark</span>
+          </div>
+        </div>
+        <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="absolute inset-x-10 bottom-4 h-20 rounded-full bg-green/20 blur-3xl" aria-hidden />
+          <div className="relative aspect-[5/4]"><Image src="/hero-laptop.png" alt="Computerpakke fra MR Computer, klar til brug" fill sizes="(max-width: 1024px) 90vw, 520px" className="object-contain drop-shadow-[0_28px_45px_rgba(11,17,32,0.22)]" priority /></div>
+          <div className="absolute bottom-3 left-0 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-4"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Med i pakken</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · IT-hjælp</p></div>
         </div>
       </div>
     </section>

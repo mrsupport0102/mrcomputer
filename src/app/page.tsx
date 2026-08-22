@@ -6,18 +6,18 @@ import { BenefitsSection } from "@/components/home/BenefitsSection";
 import { AboutSection } from "@/components/home/AboutSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { CallToAction } from "@/components/home/CallToAction";
-import { getFeaturedProducts } from "@/lib/products-store";
+import { getAllProducts } from "@/lib/products-store";
 
 export const revalidate = 60;
 
 export default async function HomePage() {
-  const featured = await getFeaturedProducts();
+  const products = await getAllProducts();
 
   return (
     <>
       <HeroSection />
+      <ProductGrid products={products} />
       <PartnerBar />
-      <ProductGrid products={featured} />
       <ProcessSection />
       <BenefitsSection />
       <AboutSection />

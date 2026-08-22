@@ -47,13 +47,18 @@ export default function ShopClient({ products }: ShopClientProps) {
   }, [category, products, sort]);
 
   return (
-    <div className="py-12">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
-        <h1 className="text-3xl font-bold text-navy">Butik</h1>
-        <p className="mt-2 text-muted">
-          Opsætning, hjemmeinstallation og dataoverførsel er altid inkluderet. 6
-          eller 12 måneders fast tryghed medfølger.
-        </p>
+    <div className="bg-[#f6f8f7] py-12 md:py-16">
+      <div className="mx-auto max-w-7xl px-4 lg:px-6">
+        <div className="rounded-[2rem] bg-navy px-6 py-8 text-white md:px-10 md:py-10">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-green">Alle løsninger</p>
+          <h1 className="mt-3 text-3xl font-bold tracking-tight md:text-5xl">Mere end bare hardware</h1>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
+            Vælg computer efter dit behov eller få hjælp uden computerkøb. Vores pakker samler udstyr, klargøring, dataoverførsel og personlig IT-hjælp i én gennemskuelig pris.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
+            {["Personlig rådgivning", "Opsat ved levering", "Data flyttet", "Hjælp bagefter"].map((item) => <span key={item} className="rounded-full bg-white/10 px-3 py-2"><span className="text-green">✓</span> {item}</span>)}
+          </div>
+        </div>
 
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
           <div className="flex flex-wrap gap-2">
@@ -64,8 +69,8 @@ export default function ShopClient({ products }: ShopClientProps) {
                 onClick={() => setCategory(cat.value)}
                 className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   category === cat.value
-                    ? "bg-navy text-white"
-                    : "bg-gray-100 text-navy hover:bg-gray-200"
+                    ? "bg-navy text-white shadow-sm"
+                    : "border border-slate-200 bg-white text-navy hover:border-green/40"
                 }`}
               >
                 {cat.label}

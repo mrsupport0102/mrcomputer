@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/Badge";
 import { PriceDisplay } from "@/components/ui/PriceDisplay";
 import { ButtonNative } from "@/components/ui/Button";
 import { useCart } from "@/context/CartContext";
+import { CheckCircleIcon } from "@/components/home/icons";
 
 interface ProductCardProps {
   product: Product;
@@ -16,7 +17,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const { addItem } = useCart();
 
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       <Link href={`/produkter/${product.slug}`} className="relative aspect-[4/3] bg-gray-50">
         {product.badge && (
           <div className="absolute left-3 top-3 z-10">
@@ -34,16 +35,24 @@ export function ProductCard({ product }: ProductCardProps) {
         />
       </Link>
 
-      <div className="flex flex-1 flex-col p-5">
+      <div className="flex flex-1 flex-col p-6">
+        <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-green">
+          {product.category === "pakker" ? `${product.supportMonths} mdr. hjælp inkluderet` : product.category === "ydelser" ? "Personlig service" : "Klar til brug"}
+        </p>
         <Link href={`/produkter/${product.slug}`}>
-          <h3 className="font-semibold text-navy group-hover:text-green">
+          <h3 className="mt-2 text-lg font-bold text-navy group-hover:text-green">
             {product.name}
           </h3>
         </Link>
         <p className="mt-2 flex-1 text-sm text-muted line-clamp-2">
           {product.shortDescription}
         </p>
-        <div className="mt-4 flex flex-col gap-3">
+        <ul className="mt-4 space-y-2 border-t border-slate-100 pt-4">
+          {product.included.slice(0, 2).map((item) => (
+            <li key={item} className="flex gap-2 text-xs leading-snug text-navy"><CheckCircleIcon className="h-4 w-4 shrink-0 text-green" />{item}</li>
+          ))}
+        </ul>
+        <div className="mt-5 flex flex-col gap-3">
           <PriceDisplay price={product.price} salePrice={product.salePrice} />
           <ButtonNative
             variant="primary"

@@ -34,8 +34,8 @@ export default async function ProductPage({ params }: Props) {
   if (!product) notFound();
 
   return (
-    <div className="py-12">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+    <div className="bg-[#f6f8f7] py-10 md:py-14">
+      <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <nav className="mb-6 text-sm text-muted" aria-label="Brødkrumme">
           <Link href="/" className="hover:text-green">Hjem</Link>
           {" / "}
@@ -44,8 +44,8 @@ export default async function ProductPage({ params }: Props) {
           <span className="text-navy">{product.name}</span>
         </nav>
 
-        <div className="grid gap-10 lg:grid-cols-2">
-          <div className="relative aspect-square overflow-hidden rounded-2xl bg-gray-50">
+        <div className="grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm lg:grid-cols-2">
+          <div className="relative min-h-[380px] bg-gradient-to-br from-slate-50 via-white to-green/5 lg:min-h-[650px]">
             {product.badge && (
               <div className="absolute left-4 top-4 z-10">
                 <Badge variant={product.salePrice ? "sale" : "featured"}>
@@ -58,36 +58,35 @@ export default async function ProductPage({ params }: Props) {
               alt={product.name}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-contain p-12"
+              className="object-contain p-10 md:p-16"
               priority
             />
           </div>
 
-          <div>
-            <h1 className="text-3xl font-bold text-navy">{product.name}</h1>
+          <div className="p-6 md:p-10 lg:p-12">
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-green">{product.category === "pakker" ? "Komplet computerpakke" : "Personlig løsning"}</p>
+            <h1 className="mt-3 text-3xl font-bold tracking-tight text-navy md:text-4xl">{product.name}</h1>
             <div className="mt-4">
               <PriceDisplay price={product.price} salePrice={product.salePrice} size="lg" />
             </div>
             <p className="mt-6 leading-relaxed text-muted">{product.description}</p>
 
-            {product.supportMonths > 0 && (
-              <p className="mt-4 rounded-lg bg-green/10 px-4 py-3 text-sm font-medium text-navy">
-                {product.supportMonths} måneders inkluderet tryghed &amp; fjernstyring
-              </p>
-            )}
-
-            <ul className="mt-6 space-y-2">
+            <div className="mt-7 rounded-2xl border border-green/20 bg-green/5 p-5">
+              <p className="text-xs font-bold uppercase tracking-[0.14em] text-green">Det følger med</p>
+              <ul className="mt-3 space-y-3">
               {product.included.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-navy">
                   <span className="text-green">✔</span>
                   {item}
                 </li>
               ))}
-            </ul>
+              {product.supportMonths > 0 && <li className="flex items-start gap-2 text-sm font-semibold text-navy"><span className="text-green">✔</span>{product.supportMonths} måneders personlig tryghed og fjernhjælp</li>}
+              </ul>
+            </div>
 
             <AddToCartSection product={product} />
 
-            <div className="mt-10">
+            <div className="mt-10 border-t border-slate-100 pt-7">
               <h2 className="text-lg font-bold text-navy">Specifikationer</h2>
               <ul className="mt-4 space-y-2">
                 {product.specs.map((spec) => (
