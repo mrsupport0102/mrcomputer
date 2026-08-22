@@ -21,21 +21,27 @@ const steps = [
   },
   {
     step: "3",
-    title: "Bestilling",
+    title: "Bestilling og personlig aftale",
     description:
-      "Du bestiller online eller telefonisk. Vi bekræfter din ordre og klargør din computer.",
+      "Du bestiller online eller telefonisk. Vi kontakter dig og aftaler afhentning og levering personligt.",
   },
   {
     step: "4",
-    title: "Hjemmeinstallation",
+    title: "Vi afhenter din gamle computer",
     description:
-      "Vi kommer hjem til dig, opsætter computeren og overfører data fra din gamle maskine.",
+      "Inden for 1–2 hverdage afhenter vi din gamle computer hjemme hos dig. Derefter flytter vi dine filer, billeder, dokumenter og øvrige data til den nye computer.",
   },
   {
     step: "5",
+    title: "Vi leverer og installerer hjemme hos dig",
+    description:
+      "Inden for 3–4 hverdage leverer vi den nye computer med dit gamle indhold på. Vi opsætter og installerer den korrekt i dit hjem og sikrer, at du er godt i gang.",
+  },
+  {
+    step: "6",
     title: "Tryghed inkluderet",
     description:
-      "6 eller 12 måneders personlig tryghed følger med. Du har altid en kontaktperson at ringe til.",
+      "6 eller 12 måneders personlig tryghed følger med. Du har altid den samme kontaktperson.",
   },
 ];
 
@@ -58,9 +64,9 @@ export default function ForloebPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-white/10 bg-white/10 p-5">
-              <p className="text-4xl font-bold text-green">3 hverdage</p>
+              <p className="text-4xl font-bold text-green">3–4 hverdage</p>
               <p className="mt-2 text-sm leading-relaxed text-white/80">
-                Hele opgaven færdiggøres og leveres normalt inden for 3 hverdage, medmindre særlige eller større forhold først skal gennemgås med dig.
+                Vi afhenter normalt din gamle computer inden for 1–2 hverdage. Inden for 3–4 hverdage leverer og installerer vi den nye computer hjemme hos dig med dine filer, billeder og dokumenter flyttet.
               </p>
             </div>
           </div>

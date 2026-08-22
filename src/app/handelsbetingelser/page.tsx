@@ -24,7 +24,7 @@ export default function LegalPage() {
             <p>CVR: 40198237 · Lyngbakken 5, 3400 Hillerød</p>
             <p>E-mail: info@mrcomputer.dk · Telefon: 31 36 45 24</p>
             <p>Alle priser er angivet i danske kroner (DKK) inkl. moms.</p>
-            <p>Typisk leveringstid er 7–14 hverdage. Computere klargøres før levering.</p>
+            <p>Ved køb af en computerpakke kontakter vi dig for at aftale forløbet. Når dataflytning fra en gammel computer indgår, afhenter vi den normalt inden for 1–2 hverdage. Den nye computer leveres og installeres normalt i hjemmet inden for 3–4 hverdage med aftalt indhold flyttet. Særlige eller større forhold kan forlænge forløbet og aftales i så fald med dig.</p>
             <p>Ved køb af computer kan der være inkluderet 6 eller 12 måneders tryghedsaftale.</p>
             <p>24 måneders reklamationsret på hardware i henhold til dansk lovgivning.</p>
             <p>14 dages fortrydelsesret ved køb online.</p>

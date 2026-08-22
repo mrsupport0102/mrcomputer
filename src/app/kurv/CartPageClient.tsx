@@ -106,7 +106,7 @@ export function CartPageClient() {
             <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green text-lg font-bold text-white">✓</span>
             <div>
               <p className="font-bold text-navy">Gennemfør dit køb inden kl. 16 og bliv ringet op allerede i dag</p>
-              <p className="mt-1 text-sm leading-relaxed text-muted">Ved køb efter kl. 16 kontakter vi dig næste dag. Hele forløbet leveres normalt inden for 3 hverdage.</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted">Ved køb efter kl. 16 kontakter vi dig næste dag. Vi afhenter din gamle computer inden for 1–2 hverdage og leverer den nye, færdigopsat i dit hjem, inden for 3–4 hverdage.</p>
             </div>
           </div>
           <div className="flex justify-between text-lg font-bold text-navy">
@@ -114,8 +114,8 @@ export function CartPageClient() {
             <span>{formatPrice(totalPrice)}</span>
           </div>
           <p className="mt-2 text-sm text-muted">
-            Sikker betaling med kort og Apple Pay via QuickPay. Efter købet aftaler vi levering
-            og opsætning med dig personligt.
+            Sikker betaling med kort og Apple Pay via QuickPay. Efter købet aftaler vi afhentning,
+            dataflytning, levering og installation hjemme hos dig personligt.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
             <CheckoutButton />

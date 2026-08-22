@@ -19,9 +19,9 @@ const pillars = [
   },
   {
     icon: ClockIcon,
-    title: "Ingen ventetid",
+    title: "Fra gammel til ny — hjemme hos dig",
     description:
-      "Vi afhenter gammelt udstyr og leverer hurtigt. Ny computer med dataoverførsel — ofte samme uge.",
+      "Vi afhenter din gamle computer inden for 1–2 hverdage. Inden for 3–4 hverdage leverer og installerer vi den nye hjemme hos dig med filer, billeder og dokumenter flyttet.",
   },
   {
     icon: HeartIcon,

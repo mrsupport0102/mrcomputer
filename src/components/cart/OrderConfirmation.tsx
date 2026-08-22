@@ -64,8 +64,9 @@ export function OrderConfirmation({ paymentId }: OrderConfirmationProps) {
       </div>
       <h1 className="mt-6 text-3xl font-bold text-navy">Tak for din bestilling!</h1>
       <p className="mt-4 text-muted">
-        Din betaling er modtaget. Vi kontakter dig hurtigst muligt for at aftale
-        levering og opsætning.
+        Din betaling er modtaget. Vi kontakter dig hurtigst muligt for at aftale afhentning
+        af din gamle computer inden for 1–2 hverdage. Inden for 3–4 hverdage leverer og
+        installerer vi den nye computer hjemme hos dig med dine filer, billeder og dokumenter flyttet.
       </p>
       <div className="mt-8 rounded-2xl border border-gray-200 bg-surface p-6 text-left">
         <p className="text-sm text-muted">Ordrenummer</p>

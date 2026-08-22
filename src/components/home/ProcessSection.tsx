@@ -13,13 +13,13 @@ const steps = [
   },
   {
     number: "03",
-    title: "Klargøring",
-    description: "Vi opsætter computeren og forbereder dataoverførsel.",
+    title: "Afhentning inden for 1–2 hverdage",
+    description: "Vi afhenter din gamle computer hjemme hos dig og tager den sikkert med til klargøring.",
   },
   {
     number: "04",
-    title: "Klar til brug",
-    description: "Hjemmeinstallation og tryghed — du er i gang med det samme.",
+    title: "Leveret klar inden for 3–4 hverdage",
+    description: "Vi flytter dine filer, billeder og dokumenter og leverer den nye computer, opsat og installeret korrekt hjemme hos dig.",
   },
 ];
 
@@ -30,7 +30,7 @@ export function ProcessSection() {
         <SectionHeader
           eyebrow="Sådan foregår det"
           title="Fra første samtale til færdig computer"
-          description="Vi gør det trygt og enkelt — du bliver holdt i hånden hele vejen."
+          description="Vi henter din gamle computer, flytter dit indhold og installerer den nye korrekt hjemme hos dig."
         />
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
