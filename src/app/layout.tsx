@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   description:
     "Computerpakker med opsætning, dataoverførsel og personlig IT-hjælp inkluderet. Levering i hele Danmark.",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo-hd.png",
+    apple: "/logo-hd.png",
   },
   openGraph: {
     type: "website",

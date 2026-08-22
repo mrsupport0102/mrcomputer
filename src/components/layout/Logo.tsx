@@ -10,7 +10,7 @@ export function Logo({ className, priority }: LogoProps) {
   return (
     <Link href="/" className={`inline-flex shrink-0 ${className ?? ""}`}>
       <Image
-        src="/logo.png"
+        src="/logo-hd.png"
         alt="MR Computer"
         width={160}
         height={46}
