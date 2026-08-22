@@ -33,10 +33,16 @@ export function HeroSection() {
             <span className="text-xs text-muted">20+ års erfaring · Levering i hele Danmark</span>
           </div>
         </div>
-        <div className="relative mx-auto w-full max-w-[560px]">
-          <div className="absolute inset-x-10 bottom-4 h-20 rounded-full bg-green/20 blur-3xl" aria-hidden />
-          <div className="relative aspect-[5/4]"><Image src="/products/tryghedspakke.png" alt="Tryghedspakken fra MR Computer, klar til brug" fill sizes="(max-width: 1024px) 90vw, 520px" className="object-contain p-4 drop-shadow-[0_28px_45px_rgba(11,17,32,0.18)]" priority /></div>
-          <div className="absolute bottom-3 left-0 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-4"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Med i pakken</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · Tryghed</p></div>
+        <div className="relative mx-auto w-full max-w-[580px] pb-8">
+          <div className="absolute -inset-5 rounded-[3rem] bg-green/10 blur-3xl" aria-hidden />
+          <div className="relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 shadow-2xl shadow-navy/15">
+            <Image src="/hero-tryghed-senior.png" alt="Personlig gennemgang af en ny computer i trygge omgivelser" fill sizes="(max-width: 1024px) 94vw, 580px" className="object-cover" priority />
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-navy/55 to-transparent" aria-hidden />
+          </div>
+          <div className="absolute bottom-0 left-4 right-4 flex items-center gap-3 rounded-2xl border border-white/70 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-6 sm:right-auto sm:min-w-[330px]">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-green/10 text-xl text-green">✓</span>
+            <div><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Du står aldrig alene</p><p className="mt-1 text-sm font-bold text-navy">Én fast kontaktperson · Tryghed inkluderet</p></div>
+          </div>
         </div>
       </div>
     </section>
