@@ -8,7 +8,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-slate-100 bg-white">
       <div className="hero-glow pointer-events-none absolute inset-0" aria-hidden />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-4 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:px-6 lg:py-20">
+      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:px-6 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:px-8 lg:py-20">
         <div className="max-w-2xl">
           <div className="inline-flex items-center gap-2 rounded-full border border-green/20 bg-green/5 px-3 py-1.5">
             <span className="h-2 w-2 rounded-full bg-green" />
@@ -35,7 +35,7 @@ export function HeroSection() {
         </div>
         <div className="relative mx-auto w-full max-w-[560px]">
           <div className="absolute inset-x-10 bottom-4 h-20 rounded-full bg-green/20 blur-3xl" aria-hidden />
-          <div className="relative aspect-[5/4]"><Image src="/hero-laptop.png" alt="Computerpakke fra MR Computer, klar til brug" fill sizes="(max-width: 1024px) 90vw, 520px" className="object-contain drop-shadow-[0_28px_45px_rgba(11,17,32,0.22)]" priority /></div>
+          <div className="relative aspect-[5/4]"><Image src="/products/tryghedspakke.png" alt="Tryghedspakken fra MR Computer, klar til brug" fill sizes="(max-width: 1024px) 90vw, 520px" className="object-contain p-4 drop-shadow-[0_28px_45px_rgba(11,17,32,0.18)]" priority /></div>
           <div className="absolute bottom-3 left-0 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:left-4"><p className="text-[10px] font-bold uppercase tracking-[0.16em] text-green">Med i pakken</p><p className="mt-1 text-sm font-bold text-navy">Opsætning · Dataflytning · IT-hjælp</p></div>
         </div>
       </div>

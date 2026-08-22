@@ -23,7 +23,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-navy text-white shadow-lg">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:px-6">
+      <div className="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between px-5 sm:px-6 lg:px-8">
         <Logo priority />
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primær menu">

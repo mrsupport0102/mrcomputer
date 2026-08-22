@@ -11,7 +11,7 @@ const legalLinks = [
 export function Footer() {
   return (
     <footer className="mt-auto bg-navy text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-2 lg:px-6">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:px-6 md:grid-cols-2 lg:px-8">
         <div>
           <Logo />
           <h2 className="mt-6 text-xs font-semibold uppercase tracking-wider text-white/60">

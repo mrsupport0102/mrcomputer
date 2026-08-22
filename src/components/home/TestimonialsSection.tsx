@@ -25,7 +25,7 @@ export function TestimonialsSection() {
 
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Kundeudtalelser"
           title="Det siger vores kunder"

@@ -26,7 +26,7 @@ const steps = [
 export function ProcessSection() {
   return (
     <section className="border-y border-gray-100 bg-surface py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Sådan foregår det"
           title="Fra første samtale til færdig computer"

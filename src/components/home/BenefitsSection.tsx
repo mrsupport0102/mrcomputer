@@ -34,7 +34,7 @@ const pillars = [
 export function BenefitsSection() {
   return (
     <section className="bg-white py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="Hvorfor MR Computer"
           title="Mere end bare en computer"

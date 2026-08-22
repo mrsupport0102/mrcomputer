@@ -10,7 +10,7 @@ const stats = [
 export function AboutSection() {
   return (
     <section className="bg-surface py-20 md:py-24">
-      <div className="mx-auto max-w-6xl px-4 lg:px-6">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <SectionHeader
