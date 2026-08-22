@@ -63,7 +63,15 @@ export async function getAllProducts(): Promise<Product[]> {
       return blobProducts;
     }
 
-    await writeBlobStore(seedProducts);
+    // Netlify exposes `NETLIFY` during builds, but Blobs credentials are only
+    // injected into Functions, Edge Functions, and Build Plugins. Static page
+    // generation must therefore be able to fall back to the bundled catalog.
+    try {
+      await writeBlobStore(seedProducts);
+    } catch {
+      return seedProducts;
+    }
+
     return seedProducts;
   }
 
