@@ -19,10 +19,10 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
       <Link href={`/produkter/${product.slug}`} className="relative aspect-[4/3] bg-gray-50">
-        {product.badge && (
+        {(product.slug === "tryghedspakke" || (product.badge && product.slug !== "komfortpakke")) && (
           <div className="absolute left-3 top-3 z-10">
-            <Badge variant={product.salePrice ? "sale" : "featured"}>
-              {product.badge}
+            <Badge variant="featured">
+              {product.slug === "tryghedspakke" ? "Mest valgt" : product.badge}
             </Badge>
           </div>
         )}

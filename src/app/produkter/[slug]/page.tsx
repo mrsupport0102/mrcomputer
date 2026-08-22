@@ -46,10 +46,10 @@ export default async function ProductPage({ params }: Props) {
 
         <div className="grid overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm lg:grid-cols-2">
           <div className="relative min-h-[380px] bg-gradient-to-br from-slate-50 via-white to-green/5 lg:min-h-[650px]">
-            {product.badge && (
+            {(product.slug === "tryghedspakke" || (product.badge && product.slug !== "komfortpakke")) && (
               <div className="absolute left-4 top-4 z-10">
-                <Badge variant={product.salePrice ? "sale" : "featured"}>
-                  {product.badge}
+                <Badge variant="featured">
+                  {product.slug === "tryghedspakke" ? "Mest valgt" : product.badge}
                 </Badge>
               </div>
             )}

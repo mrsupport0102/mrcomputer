@@ -12,8 +12,8 @@ interface ProductGridProps { products: Product[] }
 
 const packagePositioning: Record<string, { audience: string; label: string; highlight?: string }> = {
   budgetpakke: { audience: "Til mail, netbank og hverdagen", label: "God begyndelse" },
-  tryghedspakke: { audience: "Til dig der vil have mest tryghed", label: "Bedste samlede pris", highlight: "Skarp pris" },
-  komfortpakke: { audience: "Til hverdag, billeder og arbejde", label: "Bedst til de fleste", highlight: "Mest valgt" },
+  tryghedspakke: { audience: "Til dig der vil have mest tryghed", label: "Bedste samlede pris", highlight: "Mest valgt" },
+  komfortpakke: { audience: "Til hverdag, billeder og arbejde", label: "Bedst til de fleste" },
   "apple-macbook-pakke": { audience: "Til dig der foretrækker Apple", label: "Apple-løsningen" },
   premiumpakke: { audience: "Til krævende brug og lang levetid", label: "Mest overskud" },
   gamerpakke: { audience: "Til gaming og høj ydelse", label: "Maksimal kraft" },
@@ -33,7 +33,7 @@ function cleanName(name: string) {
 function PackageCard({ product }: { product: Product }) {
   const { addItem } = useCart();
   const position = packagePositioning[product.slug] ?? { audience: product.shortDescription, label: "Komplet løsning" };
-  const isFeatured = product.slug === "komfortpakke";
+  const isFeatured = product.slug === "tryghedspakke";
   const price = product.salePrice ?? product.price;
 
   return (
@@ -82,7 +82,10 @@ function ServiceCard({ product }: { product: Product }) {
 }
 
 export function ProductGrid({ products }: ProductGridProps) {
-  const packages = products.filter((product) => product.category === "pakker");
+  const packageOrder = ["tryghedspakke", "budgetpakke", "komfortpakke", "apple-macbook-pakke", "premiumpakke", "gamerpakke"];
+  const packages = products
+    .filter((product) => product.category === "pakker")
+    .sort((a, b) => packageOrder.indexOf(a.slug) - packageOrder.indexOf(b.slug));
   const services = products.filter((product) => product.category !== "pakker");
   return (
     <section id="pakker" className="scroll-mt-24 border-b border-slate-100 bg-[#f6f8f7] py-16 md:py-20">

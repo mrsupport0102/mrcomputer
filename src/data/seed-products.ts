@@ -49,14 +49,13 @@ export const seedProducts: Product[] = [
   {
     id: "3",
     slug: "komfortpakke",
-    name: "Mest valgt ⭐ Komfortpakke",
+    name: "Komfortpakke",
     shortDescription: "Lenovo LoQ 15 – kraftfuld og stabil til hverdag og arbejde.",
     description:
       "God kraftfuld og meget stabil computer til normal- og arbejdsbrug. Den perfekte løsning til de fleste.",
     price: 15000,
     salePrice: 12995,
     category: "pakker",
-    badge: "Mest valgt",
     featured: true,
     specs: [
       "GeForce RTX 3050 6GB, AMD Ryzen 7 7735HS",
@@ -89,14 +88,14 @@ export const seedProducts: Product[] = [
   {
     id: "5",
     slug: "tryghedspakke",
-    name: "🌟 Tryghedspakke – Klar til brug",
+    name: "Tryghedspakke – Klar til brug",
     shortDescription: "Komplet pakke med computer, opsætning og tryghedsaftale.",
     description:
       "Alt-i-én løsning med computer, fuld opsætning, dataoverførsel og 12 måneders personlig tryghed.",
     price: 14000,
     salePrice: 11995,
     category: "pakker",
-    badge: "Tilbud",
+    badge: "Mest valgt",
     featured: true,
     specs: [
       "Skræddersyet computer efter behov",

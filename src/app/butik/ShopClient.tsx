@@ -13,6 +13,8 @@ const categories: { value: ProductCategory | "all"; label: string }[] = [
 
 type SortOption = "default" | "price-asc" | "price-desc" | "name";
 
+const defaultOrder = ["tryghedspakke", "budgetpakke", "komfortpakke", "apple-macbook-pakke", "premiumpakke", "gamerpakke"];
+
 interface ShopClientProps {
   products: Product[];
 }
@@ -28,6 +30,13 @@ export default function ShopClient({ products }: ShopClientProps) {
         : products.filter((product) => product.category === category);
 
     switch (sort) {
+      case "default":
+        result.sort((a, b) => {
+          const aIndex = defaultOrder.indexOf(a.slug);
+          const bIndex = defaultOrder.indexOf(b.slug);
+          return (aIndex === -1 ? 99 : aIndex) - (bIndex === -1 ? 99 : bIndex);
+        });
+        break;
       case "price-asc":
         result.sort(
           (a, b) => (a.salePrice ?? a.price) - (b.salePrice ?? b.price)
